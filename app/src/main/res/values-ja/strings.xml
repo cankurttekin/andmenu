@@ -172,6 +172,7 @@
 
     <!-- Contact search -->
     <string name="contacts_action_dial_phone_number">電話: %1$s</string>
+    <string name="contacts_action_add_contact">Add to contacts: %1$s</string>
     <string name="contacts_action_email">電子メール: %1$s</string>
 
     <!-- factor command -->

@@ -173,6 +173,7 @@
 
     <!-- Contact search -->
     <string name="contacts_action_dial_phone_number">Dial: %1$s</string>
+    <string name="contacts_action_add_contact">Add to contacts: %1$s</string>
     <string name="contacts_action_email">E-mail: %1$s</string>
 
     <!-- factor command -->
@@ -225,6 +226,7 @@
         \n-&#032;Part of application name (e.g. andmenu)
         \n-&#032;Part of package name (e.g. com.cankurttekin.andmenu)
         \n-&#032;URL (e.g. https://example.com/)
+        \n-&#032;Phone number (e.g. +1234567890)
         \n-&#032;Calculation formula (e.g. 2+3*5, 1inch in cm, 1m+1inch, 1m+1inch in cm)
         \n-&#032;One of commands below (e.g. help)
         \n

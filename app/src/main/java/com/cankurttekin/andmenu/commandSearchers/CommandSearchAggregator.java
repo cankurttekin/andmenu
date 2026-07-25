@@ -11,6 +11,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DateCommandSearche
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.FactorCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.HelpCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.NetUtilCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PhoneNumberCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PreferencesCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.RunModeCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.SearchEngineCommandSearcher;
@@ -39,6 +40,7 @@ public class CommandSearchAggregator {
         commandSearcherList.add(new RunModeCommandSearcher());
         commandSearcherList.add(new DateCommandSearcher());
         commandSearcherList.add(new URICommandSearcher());
+        commandSearcherList.add(new PhoneNumberCommandSearcher());
         commandSearcherList.add(new NetUtilCommandSearcher());
         commandSearcherList.add(new CalendarCommandSearcher());
         commandSearcherList.add(new FactorCommandSearcher());

@@ -14,6 +14,7 @@ Fast, keyboard-driven Android launcher inspired by dmenu and rofi.
 - Additional search engines: ecosia, maps, youtube, youtube music
 - Launch system settings windows like wifi, bluetooth, mobile data, location, airplane mode using sys <setting>
 - Hide status bar when used as launcher (optional)
+- Call or dial numbers
 
 
 ### TODO
@@ -28,7 +29,7 @@ Fast, keyboard-driven Android launcher inspired by dmenu and rofi.
 - [x] Set as default launcher option
 - [x] Set wallpaper or solid color
 - [x] Hide status bar when set as launcher
-- [ ] Add as contact and/or call a number
+- [x] Add as contact and/or call a number
 
 
 ---
