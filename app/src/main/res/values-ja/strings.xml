@@ -181,6 +181,7 @@
     <string name="factor_error_factor_too_large">%1$sより大きな素因数を含んでいます</string>
 
     <!-- Application long-press menu -->
+    <string name="weather_error">Could not fetch weather</string>
     <string name="menu_item_app_info">アプリ情報</string>
     <string name="menu_item_rename">名前変更</string>
     <string name="menu_item_hide">非表示</string>
@@ -255,4 +256,5 @@
         \nヒント： 設定 &gt; アプリと通知 &gt; デフォルトアプリ &gt; アシスト&amp;音声入力、または似たようなメニューで andmenu をデフォルトのアシストアプリにすることにより、ホームボタン長押しで andmenu を起動できるようになります。
         \nヒント： andmenu のアイコンを常に通知に表示することで、通知バーから開くことができます。config コマンドでメニューを開いて設定できます。
     </string>
+    <string name="weather_loading">Loading weather for %1$s…</string>
 </resources>

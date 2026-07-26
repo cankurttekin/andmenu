@@ -241,6 +241,7 @@
         \n提示：将 andmenu 设为默认助手应用后可通过长按主页按钮打开它。具体方法为：系统设置 &gt; 应用程序 &amp; 通知 &gt; 默认应用 &gt; 助手应用或类似菜单。
         \n提示：可以通过始终显示通知从通知菜单启动 andmenu。可输入 config 找到该选项。
     </string>
+    <string name="weather_error">Could not fetch weather</string>
     <string name="menu_item_app_info">App Info</string>
     <string name="menu_item_rename">Rename</string>
     <string name="menu_item_hide">Hide</string>
@@ -254,4 +255,5 @@
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
+    <string name="weather_loading">Loading weather for %1$s…</string>
 </resources>

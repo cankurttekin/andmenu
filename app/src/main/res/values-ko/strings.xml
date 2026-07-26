@@ -239,6 +239,7 @@
         \n힌트: 설정 &gt; 앱 &gt; 기본 앱 &gt; 디지털 어시스턴스 앱, 이나 같은 메뉴에서 andmenu을 디지털 어시스턴트 앱으로 설정하면, 모든 화면에서 하위우측 스와이프나 홈 버튼 롱 클릭으로 andmenu을 기동 할 수 있습니다.
         \n힌트: andmenu 아이콘을 상시 알림으로 표시할 설정이 config 명령의 메뉴에서 가능합니다.
     </string>
+    <string name="weather_error">Could not fetch weather</string>
     <string name="menu_item_app_info">App Info</string>
     <string name="menu_item_rename">Rename</string>
     <string name="menu_item_hide">Hide</string>
@@ -252,4 +253,5 @@
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
+    <string name="weather_loading">Loading weather for %1$s…</string>
 </resources>

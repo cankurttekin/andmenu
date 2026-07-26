@@ -181,6 +181,10 @@
     <string name="factor_error_not_positive_number">is not positive number</string>
     <string name="factor_error_factor_too_large">includes factor larger than %1$s</string>
 
+    <!-- weather command -->
+    <string name="weather_loading">Loading weather for %1$s…</string>
+    <string name="weather_error">Could not fetch weather</string>
+
     <!-- Application long-press menu -->
     <string name="menu_item_app_info">App Info</string>
     <string name="menu_item_rename">Rename</string>
@@ -249,6 +253,7 @@
         \n-&#032;maps &lt;query&gt;
         \n-&#032;yt &lt;query&gt;
         \n-&#032;ytm &lt;query&gt;
+        \n-&#032;weather &lt;city&gt;
         \n
         \nName for search engine name can be abbreviated.
         \nFor example, \"d somequery\" is equivalent to \"duckduckgo somequery\".

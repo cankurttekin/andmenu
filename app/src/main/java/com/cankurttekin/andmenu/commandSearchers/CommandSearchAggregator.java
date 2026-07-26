@@ -17,6 +17,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.RunModeCommandSear
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.SearchEngineCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.SearchEngineDefaultCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.URICommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.WeatherCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.WidgetCommandSearcher;
 import com.cankurttekin.andmenu.dataStore.persistent.HomeScreenSetting;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
@@ -44,6 +45,7 @@ public class CommandSearchAggregator {
         commandSearcherList.add(new NetUtilCommandSearcher());
         commandSearcherList.add(new CalendarCommandSearcher());
         commandSearcherList.add(new FactorCommandSearcher());
+        commandSearcherList.add(new WeatherCommandSearcher());
 
         // Fully user-defined
         commandSearcherList.add(new WidgetCommandSearcher());

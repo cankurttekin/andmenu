@@ -238,6 +238,7 @@
     <string name="factor_error_not_valid_integer">不是有效的整數</string>
     <string name="factor_error_not_positive_number">不是正數</string>
     <string name="factor_error_factor_too_large">包含大於 %1$s 的因數</string>
+    <string name="weather_error">Could not fetch weather</string>
     <string name="menu_item_app_info">App Info</string>
     <string name="menu_item_rename">Rename</string>
     <string name="menu_item_hide">Hide</string>
@@ -251,4 +252,5 @@
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
+    <string name="weather_loading">Loading weather for %1$s…</string>
 </resources>
