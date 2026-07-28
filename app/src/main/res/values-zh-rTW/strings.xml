@@ -117,6 +117,7 @@
     <string name="preferences_item_home_screen_default_items_summary">當 andmenu 被設定為主畫面應用程式，在主畫面沒有任何輸入時，顯示結果與小工具。</string>
     <string name="preferences_item_contacts_enable_search">啟用聯絡人搜尋</string>
     <string name="preferences_item_contacts_search_permission_explanation">啟用聯絡人搜尋需要讀取聯絡人的權限。您也許會被詢問是否授權存取聯絡人。</string>
+    <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">在命令輸入視窗通知英文輸入給鍵盤輸入軟體</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">命令輸入視窗使用 setImeHintLocales 並且設定為英文語系。不同的鍵盤輸入軟體具有不同行為。</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">在命令輸入視窗設定 IME_FLAG_FORCE_ASCII 旗標</string>
@@ -253,4 +254,5 @@
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
     <string name="weather_loading">Loading weather for %1$s…</string>
+    <string name="preferences_item_music_enable_search">Enable music search</string>
 </resources>

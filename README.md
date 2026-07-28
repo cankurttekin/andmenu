@@ -1,5 +1,4 @@
 ## <img src="./fastlane/metadata/android/en-US/images/icon.png" width="32" height="32"> andmenu
-
 Fast, keyboard-driven Android launcher inspired by dmenu and rofi.
 
 [<img src="https://f-droid.org/badge/get-it-on.png"
@@ -35,6 +34,7 @@ One of commands below (e.g. help)
 - yt &lt;query&gt;
 - ytm &lt;query&gt;
 - weather &lt;city&gt;
+- m &lt;query&gt; (music)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)
 - Fuzzy application search (optional)
@@ -44,6 +44,7 @@ One of commands below (e.g. help)
 - Hide status bar when used as launcher (optional)
 - Call or dial numbers
 - Weather
+- Search and play audio files
 
 
 ### TODO

@@ -86,6 +86,7 @@
     <string name="preferences_category_custom_commands">Custom commands</string>
     <string name="preferences_category_home_screen">Home Screen</string>
     <string name="preferences_category_contacts">Contacts</string>
+    <string name="preferences_category_music">Music</string>
     <string name="preferences_category_advanced">Advanced</string>
     <string name="preferences_category_about_this_app">About</string>
 
@@ -126,6 +127,8 @@
     <string name="preferences_item_home_screen_default_items_summary">Display results and widgets when nothing is input at home screen, when andmenu is set to home app.</string>
     <string name="preferences_item_contacts_enable_search">Enable contacts search</string>
     <string name="preferences_item_contacts_search_permission_explanation">Enabling contacts search requires permission to read Contacts. You may be asked to grant the access to Contacts.</string>
+    <string name="preferences_item_music_enable_search">Enable music search</string>
+    <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -231,6 +234,7 @@
         \n-&#032;Part of package name (e.g. com.cankurttekin.andmenu)
         \n-&#032;URL (e.g. https://example.com/)
         \n-&#032;Phone number (e.g. +1234567890)
+        \n-&#032;Music (e.g. m title or m artist name)
         \n-&#032;Calculation formula (e.g. 2+3*5, 1inch in cm, 1m+1inch, 1m+1inch in cm)
         \n-&#032;One of commands below (e.g. help)
         \n
@@ -254,6 +258,7 @@
         \n-&#032;yt &lt;query&gt;
         \n-&#032;ytm &lt;query&gt;
         \n-&#032;weather &lt;city&gt;
+        \n-&#032;m &lt;query&gt;
         \n
         \nName for search engine name can be abbreviated.
         \nFor example, \"d somequery\" is equivalent to \"duckduckgo somequery\".

@@ -15,11 +15,14 @@ import androidx.preference.SwitchPreference;
 
 import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ContactSearchCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.MusicCommandSearcher;
 import com.cankurttekin.andmenu.wrapperForAndroid.ContactsReader;
+import com.cankurttekin.andmenu.wrapperForAndroid.MusicReader;
 
 public class PreferencesActivity extends BaseWindowActivity {
     private static final int READ_CONTACT_PERMISSION_GRANT_REQUEST_ID = 1;
     private static final int POST_NOTIFICATIONS_PERMISSION_GRANT_REQUEST_ID = 2;
+    private static final int READ_MUSIC_PERMISSION_GRANT_REQUEST_ID = 3;
 
     private boolean _comingBack = false;
     private PreferencesFragmentWithOnChangeListener preferenceFragment = null;
@@ -57,6 +60,15 @@ public class PreferencesActivity extends BaseWindowActivity {
                     prefEdit.apply();
 
                     ((SwitchPreference)this.preferenceFragment.findPreference(ContactSearchCommandSearcher.PREF_CONTACT_SEARCH_ENABLED_KEY)).setChecked(false);
+                }
+            }
+            if (permissions[i].equals(Manifest.permission.READ_EXTERNAL_STORAGE) || permissions[i].equals(Manifest.permission.READ_MEDIA_AUDIO)) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                    SharedPreferences.Editor prefEdit = PreferenceManager.getDefaultSharedPreferences(this).edit();
+                    prefEdit.putBoolean(MusicCommandSearcher.PREF_MUSIC_SEARCH_ENABLED_KEY, false);
+                    prefEdit.apply();
+
+                    ((SwitchPreference)this.preferenceFragment.findPreference(MusicCommandSearcher.PREF_MUSIC_SEARCH_ENABLED_KEY)).setChecked(false);
                 }
             }
             if (permissions[i].equals(Manifest.permission.POST_NOTIFICATIONS)) {
@@ -100,6 +112,13 @@ public class PreferencesActivity extends BaseWindowActivity {
                     if (! ContactsReader.appHasReadContactsPermission(PreferencesFragmentWithOnChangeListener.this.getContext())) {
                         PreferencesFragmentWithOnChangeListener.this.requestPermissions(new String[]{Manifest.permission.READ_CONTACTS},
                                 READ_CONTACT_PERMISSION_GRANT_REQUEST_ID);
+                    }
+                }
+                if (key.equals(MusicCommandSearcher.PREF_MUSIC_SEARCH_ENABLED_KEY) &&
+                        sharedPreferences.getBoolean(MusicCommandSearcher.PREF_MUSIC_SEARCH_ENABLED_KEY, false)) {
+                    if (! MusicReader.appHasReadMusicPermission(PreferencesFragmentWithOnChangeListener.this.getContext())) {
+                        PreferencesFragmentWithOnChangeListener.this.requestPermissions(MusicReader.getRequiredPermissions(),
+                                READ_MUSIC_PERMISSION_GRANT_REQUEST_ID);
                     }
                 }
             };

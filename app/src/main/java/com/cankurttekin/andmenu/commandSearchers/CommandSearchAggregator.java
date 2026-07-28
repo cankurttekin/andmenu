@@ -10,6 +10,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ContactSearchComma
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DateCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.FactorCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.HelpCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.MusicCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.NetUtilCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PhoneNumberCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PreferencesCommandSearcher;
@@ -57,6 +58,7 @@ public class CommandSearchAggregator {
 
         // Command searchers which may return tons candidate should comes to the last of "search result"
         commandSearcherList.add(new ContactSearchCommandSearcher());
+        commandSearcherList.add(new MusicCommandSearcher());
         commandSearcherList.add(new ApplicationCommandSearcher());
 
         // This should be separately called and order does not matter, and results are placed at last.

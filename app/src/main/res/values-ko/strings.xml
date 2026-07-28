@@ -117,6 +117,7 @@
     <string name="preferences_item_home_screen_default_items_summary">홈 화면으로 기동하고 명령어가 입력되지 않는 경우 표시될 항목을 설정합니다.</string>
     <string name="preferences_item_contacts_enable_search">주소록 검색</string>
     <string name="preferences_item_contacts_search_permission_explanation">활성화하기 위해는 주소록 접근 권한이 필요합니다. 별도 허용 조작이 필요할 수 있습니다.</string>
+    <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">명령어 입력창의 언어를 영어로 IME에 지시</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">명령어 입력창에 setImeHintLocales 를 통해 영어 입력으로 지시합니다. IME에 따라 동작이 다릅니다.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">명령어 입력창의 IME_FLAG_FORCE_ASCII 를 활성화</string>
@@ -254,4 +255,5 @@
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
     <string name="weather_loading">Loading weather for %1$s…</string>
+    <string name="preferences_item_music_enable_search">Enable music search</string>
 </resources>
