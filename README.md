@@ -35,6 +35,7 @@ One of commands below (e.g. help)
 - ytm &lt;query&gt;
 - weather &lt;city&gt;
 - m &lt;query&gt; (music)
+- c &lt;query&gt; (contacts)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)
 - Fuzzy application search (optional)

@@ -235,6 +235,7 @@
         \n-&#032;URL (e.g. https://example.com/)
         \n-&#032;Phone number (e.g. +1234567890)
         \n-&#032;Music (e.g. m title or m artist name)
+        \n-&#032;Contact (e.g. c name)
         \n-&#032;Calculation formula (e.g. 2+3*5, 1inch in cm, 1m+1inch, 1m+1inch in cm)
         \n-&#032;One of commands below (e.g. help)
         \n
@@ -259,6 +260,7 @@
         \n-&#032;ytm &lt;query&gt;
         \n-&#032;weather &lt;city&gt;
         \n-&#032;m &lt;query&gt;
+        \n-&#032;c &lt;query&gt;
         \n
         \nName for search engine name can be abbreviated.
         \nFor example, \"d somequery\" is equivalent to \"duckduckgo somequery\".

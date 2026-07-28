@@ -140,10 +140,19 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
             return new ArrayList<>();
         }
 
+        if (!query.toLowerCase().startsWith("c ")) {
+            return new ArrayList<>();
+        }
+
+        String actualQuery = query.substring(2).trim();
+        if (actualQuery.isEmpty()) {
+            return new ArrayList<>();
+        }
+
         List<Pair<Integer, ContactsReader.Contact>> resultList = new ArrayList<>();
 
         for (ContactsReader.Contact contact: contactList) {
-            int match = judgeQueryForContact(context, query, contact);
+            int match = judgeQueryForContact(context, actualQuery, contact);
 
             if (match >= 0) {
                 resultList.add(new Pair<>(match, contact));

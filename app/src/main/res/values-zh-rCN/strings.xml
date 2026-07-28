@@ -81,6 +81,7 @@
     <string name="preferences_category_custom_commands">定制命令</string>
     <string name="preferences_category_home_screen">主屏幕</string>
     <string name="preferences_category_contacts">通讯录</string>
+    <string name="preferences_category_music">Music</string>
     <string name="preferences_category_advanced">高级</string>
     <string name="preferences_category_about_this_app">关于</string>
 
