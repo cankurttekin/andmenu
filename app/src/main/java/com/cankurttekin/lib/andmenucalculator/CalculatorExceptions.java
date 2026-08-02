@@ -1,7 +1,7 @@
-package com.cankurttekin.lib.bluelinecalculator;
+package com.cankurttekin.lib.andmenucalculator;
 
-import com.cankurttekin.lib.bluelinecalculator.units.CombinedUnit;
-import com.cankurttekin.lib.bluelinecalculator.units.UnitDirectory;
+import com.cankurttekin.lib.andmenucalculator.units.CombinedUnit;
+import com.cankurttekin.lib.andmenucalculator.units.UnitDirectory;
 
 public class CalculatorExceptions {
     public static class IllegalFormulaException extends Exception {}

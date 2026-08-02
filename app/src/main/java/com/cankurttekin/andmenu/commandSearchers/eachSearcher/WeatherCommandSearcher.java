@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class WeatherCommandSearcher implements CommandSearcher {
-    private static final String TARGET_COMMAND = "weather";
+    private static final String TARGET_COMMAND = "w";
     private static final ExecutorService executor = Executors.newSingleThreadExecutor();
     private static final Map<String, String> cache = new HashMap<>();
     private static final Map<String, Boolean> loadingMap = new HashMap<>();
@@ -170,22 +170,23 @@ public class WeatherCommandSearcher implements CommandSearcher {
             if (weatherArr.length() > 0) {
                 sb.append("Hourly:\n");
                 JSONArray hourlyArr = weatherArr.getJSONObject(0).getJSONArray("hourly");
-                for (int i = 0; i < Math.min(8, hourlyArr.length()); i += 2) {
+                for (int i = 0; i < Math.min(8, hourlyArr.length()); i ++) {
                     JSONObject h = hourlyArr.getJSONObject(i);
                     String time = h.getString("time");
-                    if (time.length() == 1) time = "0" + time + ":00";
-                    else if (time.length() == 3) time = "0" + time.charAt(0) + ":00";
-                    else if (time.length() == 4) time = time.substring(0, 2) + ":00";
-                    else time = "00:00";
+
+                    int hour = Integer.parseInt(time);
+                    time = String.format("%02d:00", hour / 100);
 
                     String hTemp = h.getString("tempC");
                     String hCode = h.getString("weatherCode");
-                    sb.append(time).append(": ").append(getEmojiForCode(hCode)).append(" ").append(hTemp).append("°C   ");
-                    if (i % 2 == 0 && i + 2 < 8) {
-                         JSONObject h2 = hourlyArr.getJSONObject(i+1);
-                         // Just skip one to make it fit better or show more
-                    }
-                    sb.append("\n");
+
+                    sb.append(time)
+                        .append(": ")
+                        .append(getEmojiForCode(hCode))
+                        .append(" ")
+                        .append(hTemp)
+                        .append("°C\n");
+
                 }
                 sb.append("\nForecast:\n");
                 for (int i = 0; i < Math.min(3, weatherArr.length()); i++) {

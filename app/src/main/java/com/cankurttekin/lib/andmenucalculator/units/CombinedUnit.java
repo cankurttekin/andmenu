@@ -1,8 +1,8 @@
-package com.cankurttekin.lib.bluelinecalculator.units;
+package com.cankurttekin.lib.andmenucalculator.units;
 
 
-import com.cankurttekin.lib.bluelinecalculator.CalculatorExceptions;
-import com.cankurttekin.lib.bluelinecalculator.CalculatorNumber;
+import com.cankurttekin.lib.andmenucalculator.CalculatorExceptions;
+import com.cankurttekin.lib.andmenucalculator.CalculatorNumber;
 
 import java.util.ArrayList;
 import java.util.Arrays;

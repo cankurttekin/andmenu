@@ -5,7 +5,9 @@ Fast, keyboard-driven Android launcher inspired by dmenu and rofi.
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/com.cankurttekin.andmenu/)
 ### Screenshots
-<img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="240">
+<img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="240"> <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="240">
+
+
 
 ### Commands
 Search part of application name (e.g. andmenu)
@@ -21,20 +23,20 @@ One of commands below (e.g. help)
 - date
 - all_apps
 - hidden_apps
-- sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;
 - cal [&lt;month&gt; &lt;year&gt;]
+- sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt; (launch system settings windows)
 - factor &lt;number&gt; ...
-- bing &lt;query&gt;
-- d &lt;query&gt;
+- d &lt;query&gt; (duckduckgo)
 - google &lt;query&gt;
+- bing &lt;query&gt;
 - wikipedia &lt;query&gt;
 - yahoo &lt;query&gt;
 - ecosia &lt;query&gt;
-- maps &lt;query&gt;
-- yt &lt;query&gt;
-- ytm &lt;query&gt;
-- weather &lt;city&gt;
-- m &lt;query&gt; (music)
+- gm &lt;query&gt; (google maps)
+- yt &lt;query&gt; (youtube)
+- ytm &lt;query&gt; (youtube music)
+- w &lt;city&gt; (weather wttr.in)
+- m &lt;query&gt; (local music files)
 - c &lt;query&gt; (contacts)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)

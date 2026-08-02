@@ -13,13 +13,13 @@ import androidx.core.util.Pair;
 
 import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.applicationMain.MainActivity;
-import com.cankurttekin.lib.bluelinecalculator.Calculator;
-import com.cankurttekin.lib.bluelinecalculator.CalculatorExceptions;
-import com.cankurttekin.lib.bluelinecalculator.CalculatorNumber;
+import com.cankurttekin.lib.andmenucalculator.Calculator;
+import com.cankurttekin.lib.andmenucalculator.CalculatorExceptions;
+import com.cankurttekin.lib.andmenucalculator.CalculatorNumber;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
 import com.cankurttekin.andmenu.interfaces.CommandSearcher;
 import com.cankurttekin.andmenu.interfaces.EventLauncher;
-import com.cankurttekin.lib.bluelinecalculator.units.data.UnitDirectoryBasicData;
+import com.cankurttekin.lib.andmenucalculator.units.data.UnitDirectoryBasicData;
 
 import java.util.ArrayList;
 import java.util.List;

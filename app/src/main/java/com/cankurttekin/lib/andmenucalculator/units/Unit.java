@@ -1,9 +1,9 @@
-package com.cankurttekin.lib.bluelinecalculator.units;
+package com.cankurttekin.lib.andmenucalculator.units;
 
 import java.math.BigDecimal;
 
-import com.cankurttekin.lib.bluelinecalculator.CalculatorExceptions;
-import com.cankurttekin.lib.bluelinecalculator.CalculatorNumber;
+import com.cankurttekin.lib.andmenucalculator.CalculatorExceptions;
+import com.cankurttekin.lib.andmenucalculator.CalculatorNumber;
 
 public interface Unit extends Comparable<Unit> {
     String getUnitName();
