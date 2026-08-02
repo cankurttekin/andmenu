@@ -37,4 +37,10 @@
     <color name="dmenu_accent">#005577</color>
     <color name="dmenu_selected">#005577</color>
     <color name="dmenu_selected_fg">#eeeeee</color>
+
+    <!-- AMOLED -->
+    <color name="amoled_bg">#000000</color>
+    <color name="amoled_fg">#ffffff</color>
+    <color name="amoled_accent">#000000</color>
+    <color name="amoled_selected">#333333</color>
 </resources>

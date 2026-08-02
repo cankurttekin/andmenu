@@ -31,6 +31,7 @@
 
     <!-- Widgets -->
     <string name="theme_name_rosepine">Rose Pine</string>
+    <string name="theme_name_amoled">AMOLED (Full Black)</string>
     <string name="widget_launcher_label">andmenu 快捷方式</string>
 
     <!-- String match strategies -->

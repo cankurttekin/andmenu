@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppThemeAmoled" parent="BaseAppThemeDark">
+        <item name="android:colorBackground">@color/amoled_bg</item>
+        <item name="android:windowBackground">@color/amoled_bg</item>
+        <item name="android:textColor">@color/amoled_fg</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/amoled_bg</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/amoled_selected</item>
+        <item name="andmenuAccentColor">@color/amoled_accent</item>
+        <item name="andmenuBaseTextColor">@color/amoled_fg</item>
+        <item name="andmenuFrameColor">@color/amoled_bg</item>
+        <item name="andmenuFrameTextColor">@color/amoled_fg</item>
+    </style>
+
+    <style name="AppThemeAmoledHome" parent="AppThemeAmoled">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/amoled_bg</item>
+        <item name="android:windowShowWallpaper">false</item>
+    </style>
+</resources>

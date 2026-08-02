@@ -33,6 +33,7 @@
     <string name="theme_name_old_computer">Old Computer</string>
     <string name="theme_name_gruvbox">Gruvbox</string>
     <string name="theme_name_rosepine">Rose Pine</string>
+    <string name="theme_name_amoled">AMOLED (Full Black)</string>
 
     <!-- Widgets -->
     <string name="widget_launcher_label">andmenu shortcut</string>

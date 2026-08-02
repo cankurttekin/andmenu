@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuDarkTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuDefaultTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmoledTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuDarkTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuLightTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuTheme;
@@ -32,6 +33,7 @@ public class AppThemeDirectory {
             new OldComputerTheme(),
             new GruvboxTheme(),
             new RosePineTheme(),
+            new AmoledTheme(),
     };
 
     private static Map<String, AppTheme> themeMap;
