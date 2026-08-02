@@ -5,6 +5,9 @@ import android.preference.PreferenceManager;
 
 import com.cankurttekin.andmenu.R;
 
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
 public class StringMatchStrategy {
     public static final int SUBSTRING = 1;
     public static final int SKIPPED_SUBSTRING = 2;
@@ -13,6 +16,14 @@ public class StringMatchStrategy {
     public static final int[] STRATEGY_LIST = new int[]{ SUBSTRING, SKIPPED_SUBSTRING, FUZZY };
 
     public static final String PREF_NAME = "pref_text_match_strategy";
+
+    private static final Pattern DIACRITICS_PATTERN = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+
+    private static String normalize(String s) {
+        if (s == null) return "";
+        String nfdNormalizedString = Normalizer.normalize(s, Normalizer.Form.NFD);
+        return DIACRITICS_PATTERN.matcher(nfdNormalizedString).replaceAll("");
+    }
 
     public static CharSequence getStrategyName(Context context, int strategy) {
         switch (strategy) {
@@ -75,8 +86,8 @@ public class StringMatchStrategy {
             return -1;
         }
 
-        String query_lower = query.toLowerCase();
-        String target_lower = target.toLowerCase();
+        String query_lower = normalize(query.toLowerCase());
+        String target_lower = normalize(target.toLowerCase());
 
         if (strategy == SUBSTRING) {
             boolean ok = startingMustMatch ? target_lower.startsWith(query_lower)
