@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +33,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class WeatherCommandSearcher implements CommandSearcher {
-    private static final String TARGET_COMMAND = "w";
     private static final ExecutorService executor = Executors.newSingleThreadExecutor();
     private static final Map<String, String> cache = new HashMap<>();
     private static final Map<String, Boolean> loadingMap = new HashMap<>();
@@ -57,14 +58,14 @@ public class WeatherCommandSearcher implements CommandSearcher {
     @NonNull
     public List<CandidateEntry> searchCandidateEntries(String query, Context context) {
         List<CandidateEntry> candidates = new ArrayList<>();
+        String queryLower = query.toLowerCase();
 
-        if (query.toLowerCase().startsWith(TARGET_COMMAND + " ")) {
-            String city = query.substring(TARGET_COMMAND.length() + 1).trim();
-            if (!city.isEmpty()) {
-                candidates.add(new WeatherCandidateEntry(city, context));
-            }
-        } else if (query.equalsIgnoreCase(TARGET_COMMAND)) {
-            candidates.add(new WeatherCandidateEntry("", context));
+        if (queryLower.startsWith("weather ")) {
+            String city = query.substring("weather ".length()).trim();
+            candidates.add(new WeatherCandidateEntry(city, context));
+        } else if (queryLower.startsWith("w ")) {
+            String city = query.substring("w ".length()).trim();
+            candidates.add(new WeatherCandidateEntry(city, context));
         }
 
         return candidates;
@@ -84,11 +85,14 @@ public class WeatherCommandSearcher implements CommandSearcher {
         @NonNull
         @Override
         public String getTitle() {
-            return TARGET_COMMAND + (city.isEmpty() ? "" : " " + city);
+            return "weather" + (city.isEmpty() ? "" : " " + city);
         }
 
         @Override
         public View getView(MainActivity mainActivity) {
+            LinearLayout layout = new LinearLayout(mainActivity);
+            layout.setOrientation(LinearLayout.VERTICAL);
+
             TextView textView = new TextView(mainActivity);
             TypedValue baseTextColor = new TypedValue();
             mainActivity.getTheme().resolveAttribute(R.attr.andmenuBaseTextColor, baseTextColor, true);
@@ -102,7 +106,26 @@ public class WeatherCommandSearcher implements CommandSearcher {
                 textView.setText(loadingText);
                 fetchWeather(mainActivity);
             }
-            return textView;
+            layout.addView(textView);
+
+            Button refreshButton = new Button(mainActivity);
+            refreshButton.setText(R.string.button_update);
+            refreshButton.setOnClickListener(v -> {
+                cache.remove(city);
+                textView.setText(loadingText);
+                fetchWeather(mainActivity);
+            });
+            
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, mainActivity.getResources().getDisplayMetrics());
+            refreshButton.setLayoutParams(params);
+            
+            layout.addView(refreshButton);
+
+            return layout;
         }
 
         private void fetchWeather(MainActivity activity) {
