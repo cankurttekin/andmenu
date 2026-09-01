@@ -229,27 +229,42 @@
 
     <!-- Help -->
     <string name="app_help_text">
-        You can input one of below list to search apps or commands.
+        Android application launcher and command menu
+
         \n
-        \n-&#032;Part of application name (e.g. andmenu)
-        \n-&#032;Part of package name (e.g. com.cankurttekin.andmenu)
-        \n-&#032;URL (e.g. https://example.com/)
-        \n-&#032;Phone number (e.g. +1234567890)
-        \n-&#032;Music (e.g. m title or m artist name)
-        \n-&#032;Contact (e.g. c name)
-        \n-&#032;Calculation formula (e.g. 2+3*5, 1inch in cm, 1m+1inch, 1m+1inch in cm)
-        \n-&#032;One of commands below (e.g. help)
+        \nUSAGE
+        \n-&#032;Enter a query to search applications, commands, or other supported content.
         \n
-        \nAvailable commands:
+        \nSEARCH
+        \n-&#032;Part of application name
+        \n-&#032;Part of package name
+        \n-&#032;URL
+        \n-&#032;Phone number
+        \n-&#032;m &lt;query&gt; - Music
+        \n-&#032;c &lt;query&gt; - Contacts
+        \n-&#032;Calculation formula
         \n
+        \nEXAMPLES
+        \n-&#032;m hooker with a pen
+        \n-&#032;m joy division
+        \n-&#032;c alan turing
+        \n-&#032;(8+6)*3
+        \n-&#032;1inch in cm
+        \n-&#032;1m+1inch in cm
+        \n-&#032;https://example.com/
+        \n-&#032;+1234567890
+        \n
+        \nCOMMANDS
         \n-&#032;help
         \n-&#032;config
         \n-&#032;date
         \n-&#032;all_apps
         \n-&#032;hidden_apps
-        \n-&#032;sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;
         \n-&#032;cal [&lt;month&gt; &lt;year&gt;]
         \n-&#032;factor &lt;number&gt; ...
+        \n-&#032;sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;
+        \n
+        \nWEB SEARCH
         \n-&#032;bing &lt;query&gt;
         \n-&#032;d &lt;query&gt;
         \n-&#032;google &lt;query&gt;
@@ -260,22 +275,28 @@
         \n-&#032;yt &lt;query&gt;
         \n-&#032;ytm &lt;query&gt;
         \n-&#032;weather &lt;city&gt;
-        \n-&#032;m &lt;query&gt;
-        \n-&#032;c &lt;query&gt;
         \n
-        \nName for search engine name can be abbreviated.
-        \nFor example, \"d somequery\" is equivalent to \"duckduckgo somequery\".
+        \nSearch engine names can be abbreviated.
+        \n-&#032;Example: d somequery = duckduckgo somequery
         \n
-        \nNetwork administrative commands:
+        \nNETWORK
+        \n-&#032;ping &lt;host&gt;
+        \n-&#032;ping6 &lt;host&gt;
+        \n-&#032;Only available on systems with the corresponding command.
         \n
-        \n-&#032;ping &lt;host&gt;, ping6 &lt;host&gt;　(only on systems with corresponding command)
+        \nOTHER
+        \n-&#032;Color code (e.g. #4d68ff)
         \n
-        \nOther commands:
+        \nANDROID INTEGRATION
+        \n-&#032;Set andmenu as the Default Assistant App from:
+        \n-&#032;Settings &gt; Apps &amp; notifications &gt; Default Apps &gt; Assistant app
+        \n-&#032;or the equivalent menu on your device.
         \n
-        \n-&#032;Color code (like #4d68ff)
+        \n-&#032;andmenu can also be launched from the notification shade.
+        \n-&#032;Enable the persistent notification from the config command.
         \n
-        \nHint: Set up andmenu as Default Assistant App from Settings &gt; Apps &amp; notifications &gt; Default Apps &gt; Assistant app or similar menu, to make andmenu open on long-pressing home button.
-        \nHint: andmenu can be launched from notification menu by always showing notification. Find the option from config command.
+        \nTIP
+        \n-&#032;Type help at any time to display this help.
     </string>
 
     <!-- Licensing information, untranslatable not to make slightest difference -->
