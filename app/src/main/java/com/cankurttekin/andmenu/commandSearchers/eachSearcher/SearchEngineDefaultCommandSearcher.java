@@ -8,6 +8,7 @@ import com.cankurttekin.andmenu.commands.urls.WebSearchEngine;
 import com.cankurttekin.andmenu.commands.urls.WebSearchEnginesDatabase;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
 import com.cankurttekin.andmenu.interfaces.CommandSearcher;
+import com.cankurttekin.andmenu.lib.StringValidator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,10 @@ public class SearchEngineDefaultCommandSearcher implements CommandSearcher {
     @NonNull
     public List<CandidateEntry> searchCandidateEntries(String query, Context context) {
         List<CandidateEntry> candidates = new ArrayList<>();
+
+        if (StringValidator.isValidURLAccepted(query, false, context)) {
+            return candidates;
+        }
 
         WebSearchEngine searchEngine = this._searchEngineDB.getDefaultEngineByPreference(context);
 
