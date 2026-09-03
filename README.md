@@ -48,6 +48,9 @@ One of commands below (e.g. help)
 - Call or dial numbers
 - Weather
 - Search and play audio files
+- Import/export configuration
+- Edit configuration file(json) in-app
+- Custom CSS support
 
 
 ### TODO

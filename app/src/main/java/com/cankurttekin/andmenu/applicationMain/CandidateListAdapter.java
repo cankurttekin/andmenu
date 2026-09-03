@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
 
 import com.cankurttekin.andmenu.R;
+import com.cankurttekin.andmenu.applicationMain.lib.StyleManager;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
 import com.cankurttekin.andmenu.interfaces.EventLauncher;
 
@@ -82,6 +83,9 @@ class CandidateListAdapter extends ArrayAdapter<CandidateEntry> {
         }
 
         titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, (detailView == null && !candidate.isSubItem()) ? 24 : 18);
+        StyleManager.applyTextViewStyles(titleTextView, "result_title");
+        StyleManager.applyViewPadding(convertView, "result_item");
+
         final double pixelsPerSp = this.getContext().getResources().getDisplayMetrics().scaledDensity;
         if (candidate.isSubItem()) {
             convertView.setPaddingRelative((int)(31.0 * pixelsPerSp), (int)(7.0 * pixelsPerSp),

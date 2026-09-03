@@ -146,6 +146,11 @@
             android:theme="@style/AppThemeAndmenu"
             />
         <activity
+            android:name=".applicationMain.ConfigEditorActivity"
+            android:theme="@style/AppThemeAndmenu"
+            android:exported="false"
+            />
+        <activity
             android:name=".commands.netutils.PingActivity"
             android:theme="@style/AppThemeAndmenu"
             android:exported="false"

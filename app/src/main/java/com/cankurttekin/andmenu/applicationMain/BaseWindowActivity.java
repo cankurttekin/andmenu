@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.preference.PreferenceManager;
 
 import com.cankurttekin.andmenu.R;
+import com.cankurttekin.andmenu.applicationMain.lib.StyleManager;
 import com.cankurttekin.andmenu.applicationMain.theming.AppTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.AppThemeDirectory;
 
@@ -195,6 +196,9 @@ public class BaseWindowActivity extends AppCompatActivity {
     }
 
     protected int getAccentColor() {
+        Integer custom = StyleManager.getCustomColor(this, "andmenuAccentColor");
+        if (custom != null) return custom;
+
         String accentColorPreference = PreferenceManager.getDefaultSharedPreferences(this).getString(PREF_NAME_ACCENT_COLOR, PREF_VALUE_ACCENT_COLOR_THEME_DEFAULT);
 
         if (accentColorPreference.equals(PREF_VALUE_ACCENT_COLOR_THEME_DEFAULT)) {
@@ -222,6 +226,14 @@ public class BaseWindowActivity extends AppCompatActivity {
     @CallSuper
     protected void applyAccentColor(int color) {
         this.currentTheme.applyAccentColor(this, color);
+
+        Integer frameColor = StyleManager.getCustomColor(this, "andmenuFrameColor");
+        if (frameColor != null) {
+            View header = findViewById(R.id.baseWindowHeaderWrapper);
+            if (header != null) header.setBackgroundColor(frameColor);
+            View footer = findViewById(R.id.baseWindowFooterWrapper);
+            if (footer != null) footer.setBackgroundColor(frameColor);
+        }
     }
 
     protected void onHeightChange() {}

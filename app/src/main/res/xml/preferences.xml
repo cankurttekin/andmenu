@@ -214,6 +214,22 @@
         android:title="@string/preferences_category_advanced"
         app:iconSpaceReserved="false"
         >
+        <Preference
+            android:key="pref_advanced_text_config"
+            android:title="@string/preferences_item_advanced_text_config_title"
+            android:summary="@string/preferences_item_advanced_text_config_summary"
+            app:iconSpaceReserved="false"
+            />
+        <Preference
+            android:key="pref_advanced_export_config"
+            android:title="@string/preferences_item_advanced_export_config_title"
+            app:iconSpaceReserved="false"
+            />
+        <Preference
+            android:key="pref_advanced_import_config"
+            android:title="@string/preferences_item_advanced_import_config_title"
+            app:iconSpaceReserved="false"
+            />
         <SwitchPreference
             android:key="pref_mainedittext_hint_locale_english"
             android:title="@string/preferences_item_advanced_main_edittext_hint_locale_english_title"

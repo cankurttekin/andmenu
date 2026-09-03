@@ -19,6 +19,7 @@ import android.widget.ListView;
 
 import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.applicationMain.lib.EditTextConfigurations;
+import com.cankurttekin.andmenu.applicationMain.lib.StyleManager;
 import com.cankurttekin.andmenu.commandSearchers.CommandSearchAggregator;
 import com.cankurttekin.andmenu.dataStore.deviceLocal.WidgetsSetting;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
@@ -289,6 +290,9 @@ public class MainActivity extends BaseWindowActivity {
         final double editTextSizeSp = Math.min(40.0, this.getWindowBodyAvailableHeight() / 4.8 / pixelsPerSp);
         mainInputText.setTextSize((int) editTextSizeSp);
         mainInputText.setPadding((int) (editTextSizeSp * 0.3 * pixelsPerSp), (int)(editTextSizeSp * 0.3 * pixelsPerSp), (int)(editTextSizeSp * 0.3 * pixelsPerSp), (int)(editTextSizeSp * 0.3 * pixelsPerSp));
+
+        StyleManager.applyTextViewStyles(mainInputText, "main_input");
+        StyleManager.applyViewPadding(mainInputText, "main_input");
 
         mainInputText.requestFocus();
         mainInputText.requestFocusFromTouch();

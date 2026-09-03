@@ -135,6 +135,10 @@
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_summary">IME_FLAG_FORCE_ASCII is intended to use ASCII characters for input. Behavior differs between keyboard input softwares.</string>
+    <string name="preferences_item_advanced_text_config_title">Advanced Text Configuration</string>
+    <string name="preferences_item_advanced_text_config_summary">Edit, Export, or Import full app setup as JSON.</string>
+    <string name="preferences_item_advanced_export_config_title">Export Configuration</string>
+    <string name="preferences_item_advanced_import_config_title">Import Configuration</string>
     <string name="preferences_item_accept_arbitrary_url">Accept arbitrary scheme for URL</string>
     <string name="preferences_item_accept_arbitrary_url_summary">By default, andmenu accepts only URL starting with http:// and https:// as URL input. By enabling option, other schemes are also accepted as URL input.</string>
     <string name="preferences_item_about_this_app_licensing_information">License information</string>
