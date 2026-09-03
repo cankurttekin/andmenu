@@ -14,6 +14,7 @@ import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.GruvboxTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.MarineTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.OldComputerTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.RosePineTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.TransparentTheme;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +35,7 @@ public class AppThemeDirectory {
             new GruvboxTheme(),
             new RosePineTheme(),
             new AmoledTheme(),
+            new TransparentTheme(),
     };
 
     private static Map<String, AppTheme> themeMap;

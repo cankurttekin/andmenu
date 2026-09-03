@@ -43,4 +43,10 @@
     <color name="amoled_fg">#ffffff</color>
     <color name="amoled_accent">#000000</color>
     <color name="amoled_selected">#333333</color>
+
+    <!-- Transparent -->
+    <color name="transparent_bg">#80000000</color>
+    <color name="transparent_fg">#ffffff</color>
+    <color name="transparent_selected">#44ffffff</color>
+    <color name="transparent_accent">#80ffffff</color>
 </resources>

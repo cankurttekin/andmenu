@@ -35,6 +35,7 @@
 
     <!-- Widgets -->
     <string name="theme_name_amoled">AMOLED (Full Black)</string>
+    <string name="theme_name_transparent">Transparent</string>
     <string name="widget_launcher_label">andmenu のショートカット</string>
 
     <!-- String match strategies -->

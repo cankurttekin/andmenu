@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppThemeTransparent" parent="BaseAppThemeDark">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@color/transparent_bg</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/transparent_bg</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/transparent_selected</item>
+        <item name="andmenuAccentColor">@color/transparent_accent</item>
+        <item name="andmenuBaseTextColor">@color/transparent_fg</item>
+        <item name="andmenuFrameColor">@color/transparent_bg</item>
+        <item name="andmenuFrameTextColor">#000000</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeTransparentHome" parent="AppThemeTransparent">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+</resources>
