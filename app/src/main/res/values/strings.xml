@@ -240,14 +240,15 @@
         \n-&#032;Part of package name
         \n-&#032;URL
         \n-&#032;Phone number
+        \n-&#032;Email address
         \n-&#032;m &lt;query&gt; - Music
         \n-&#032;c &lt;query&gt; - Contacts
         \n-&#032;Calculation formula
         \n
         \nEXAMPLES
-        \n-&#032;m hooker with a pen
         \n-&#032;m joy division
         \n-&#032;c alan turing
+        \n-&#032;example@example.com
         \n-&#032;(8+6)*3
         \n-&#032;1inch in cm
         \n-&#032;1m+1inch in cm

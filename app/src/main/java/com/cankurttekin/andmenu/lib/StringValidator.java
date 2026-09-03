@@ -61,4 +61,46 @@ public class StringValidator {
     public static boolean getPreferenceURLArbitrarySchemeAccepted(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(PREF_URL_ACCEPT_ARBITRARY_SCHEME, false);
     }
+
+    public static boolean isWebURLWithoutScheme(String query) {
+        if (query == null || query.contains(" ")) {
+            return false;
+        }
+
+        // Must have at least one dot
+        int lastDot = query.lastIndexOf('.');
+        if (lastDot <= 0 || lastDot == query.length() - 1) {
+            return false;
+        }
+
+        // If it starts with www., it's almost certainly a URL
+        if (query.toLowerCase().startsWith("www.")) {
+            return true;
+        }
+
+        String tld = query.substring(lastDot + 1);
+        // TLD should be at least 2 chars and only letters
+        if (tld.length() < 2) {
+            return false;
+        }
+
+        for (int i = 0; i < tld.length(); i++) {
+            char c = tld.charAt(i);
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+
+        // Avoid common package segments if there are many segments
+        String[] segments = query.split("\\.");
+        if (segments.length > 2) {
+            String first = segments[0].toLowerCase();
+            if (first.equals("com") || first.equals("org") || first.equals("net") || first.equals("android") || first.equals("google")) {
+                // Highly likely to be a package name or similar technical string
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

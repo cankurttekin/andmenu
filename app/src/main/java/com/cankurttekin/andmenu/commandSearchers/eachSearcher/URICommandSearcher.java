@@ -48,17 +48,24 @@ public class URICommandSearcher implements CommandSearcher {
         return true;
     }
 
-    private static class URLOpenCandidateEntry implements CandidateEntry {
+    public static class URLOpenCandidateEntry implements CandidateEntry {
         final String url;
+        final String displayTitle;
 
-        URLOpenCandidateEntry(String url) {
+        public URLOpenCandidateEntry(String url) {
             this.url = url;
+            this.displayTitle = url;
+        }
+
+        public URLOpenCandidateEntry(String url, String displayTitle) {
+            this.url = url;
+            this.displayTitle = displayTitle;
         }
 
         @Override
         @NonNull
         public String getTitle() {
-            return url;
+            return displayTitle;
         }
 
         @Override

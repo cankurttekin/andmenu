@@ -8,6 +8,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.CalculatorCommandS
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ColorDisplayCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ContactSearchCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DateCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.EmailCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.FactorCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.HelpCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.MusicCommandSearcher;
@@ -43,6 +44,7 @@ public class CommandSearchAggregator {
         commandSearcherList.add(new DateCommandSearcher());
         commandSearcherList.add(new URICommandSearcher());
         commandSearcherList.add(new PhoneNumberCommandSearcher());
+        commandSearcherList.add(new EmailCommandSearcher());
         commandSearcherList.add(new NetUtilCommandSearcher());
         commandSearcherList.add(new CalendarCommandSearcher());
         commandSearcherList.add(new FactorCommandSearcher());
