@@ -84,6 +84,7 @@
     <string name="preferences_category_main">General</string>
     <string name="preferences_category_appearance">Appearance</string>
     <string name="preferences_category_apps">Launching Apps</string>
+    <string name="preferences_category_search_commands">Search Commands</string>
     <string name="preferences_category_urls">Web Pages and Searches</string>
     <string name="preferences_category_custom_commands">Custom commands</string>
     <string name="preferences_category_home_screen">Home Screen</string>
@@ -131,6 +132,14 @@
     <string name="preferences_item_contacts_search_permission_explanation">Enabling contacts search requires permission to read Contacts. You may be asked to grant the access to Contacts.</string>
     <string name="preferences_item_music_enable_search">Enable music search</string>
     <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
+
+    <string name="preferences_category_bookmarks">Bookmarks</string>
+    <string name="preferences_item_bookmark_enable_search">Enable bookmarks search</string>
+    <string name="preferences_item_bookmark_search_summary">Enable searching and managing saved bookmarks with \'b \'</string>
+
+    <string name="preferences_category_notes">Notes &amp; To-Do</string>
+    <string name="preferences_item_note_enable_search">Enable notes &amp; to-do search</string>
+    <string name="preferences_item_note_search_summary">Enable searching and managing notes and to-dos with \'n \'</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -248,11 +257,15 @@
         \n-&#032;Email address
         \n-&#032;m &lt;query&gt; - Music
         \n-&#032;c &lt;query&gt; - Contacts
+        \n-&#032;b &lt;query&gt; - Bookmarks
+        \n-&#032;n &lt;query&gt; - Notes &amp; To-Do
         \n-&#032;Calculation formula
         \n
         \nEXAMPLES
         \n-&#032;m joy division
         \n-&#032;c alan turing
+        \n-&#032;b github
+        \n-&#032;n buy groceries
         \n-&#032;example@example.com
         \n-&#032;(8+6)*3
         \n-&#032;1inch in cm

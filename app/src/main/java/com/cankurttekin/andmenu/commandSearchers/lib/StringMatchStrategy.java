@@ -125,6 +125,12 @@ public class StringMatchStrategy {
             return -1;
 
         } else if (strategy == FUZZY) {
+            if (startingMustMatch) {
+                if (query_lower.charAt(0) != target_lower.charAt(0)) {
+                    return -1;
+                }
+            }
+
             int query_cur = 0;
             int score = 100; // Base score for fuzzy match
             int last_match_index = -1;

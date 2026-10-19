@@ -52,12 +52,12 @@ public class NetUtilCommandSearcher implements CommandSearcher {
             String query = s.substring(split + 1);
 
             if (!query.contains(" ") && (query.length() == 0 || query.charAt(0) != '-')) {
-                if (this._pingAvailable) {
+                if (this._pingAvailable && PingActivity.TARGET_COMMAND_SHORT.startsWith(engine)) {
                     if (StringMatchStrategy.match(context, engine, PingActivity.TARGET_COMMAND_SHORT, true) != -1) {
                         ret.add(new PingCandidateEntry(s.split(" ", 2)[1]));
                     }
                 }
-                if (this._ping6Available) {
+                if (this._ping6Available && Ping6Activity.TARGET_COMMAND_SHORT.startsWith(engine)) {
                     if (StringMatchStrategy.match(context, engine, Ping6Activity.TARGET_COMMAND_SHORT, true) != -1) {
                         ret.add(new Ping6CandidateEntry(s.split(" ", 2)[1]));
                     }

@@ -3,6 +3,7 @@ package com.cankurttekin.andmenu.commandSearchers;
 import android.content.Context;
 
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ApplicationCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.BookmarkCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.CalendarCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.CalculatorCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ColorDisplayCommandSearcher;
@@ -13,6 +14,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.FactorCommandSearc
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.HelpCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.MusicCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.NetUtilCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.NoteCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PhoneNumberCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.PreferencesCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.RunModeCommandSearcher;
@@ -54,6 +56,8 @@ public class CommandSearchAggregator {
         commandSearcherList.add(new WidgetCommandSearcher());
 
         // First character is limited
+        commandSearcherList.add(new BookmarkCommandSearcher());
+        commandSearcherList.add(new NoteCommandSearcher());
         commandSearcherList.add(new CalculatorCommandSearcher());
         commandSearcherList.add(new SearchEngineCommandSearcher(context));
         commandSearcherList.add(new ColorDisplayCommandSearcher());

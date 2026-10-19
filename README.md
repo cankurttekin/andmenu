@@ -38,6 +38,8 @@ One of commands below (e.g. help)
 - w &lt;city&gt; (weather wttr.in)
 - m &lt;query&gt; (local music files)
 - c &lt;query&gt; (contacts)
+- b &lt;query&gt; (bookmarks)
+- n &lt;query&gt; (notes and to-dos)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)
 - Fuzzy application search (optional)
@@ -48,6 +50,8 @@ One of commands below (e.g. help)
 - Call or dial numbers
 - Weather
 - Search and play audio files
+- Bookmarks management
+- Notes and To-Do list management
 - Import/export configuration
 - Edit configuration file(json) in-app
 - Custom CSS support
@@ -59,7 +63,8 @@ One of commands below (e.g. help)
 - [x] New search engines (ecosia, maps, yt, yt music, etc)
 - [x] Custom commands to change system settings
 - [ ] Search files, images etc
-- [ ] Todo or note taking
+- [x] Todo or note taking
+- [x] Bookmarks management
 - [x] Long press apps to show app info, uninstall, hide and rename
 - [x] New themes (dmenu, gruvbox, rosepine, etc)
 - [x] Set as default launcher option
