@@ -14,6 +14,7 @@ import androidx.preference.PreferenceManager;
 import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.applicationMain.MainActivity;
 import com.cankurttekin.andmenu.commandSearchers.lib.StringMatchStrategy;
+import com.cankurttekin.andmenu.commands.contacts.ContactUsageHistory;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
 import com.cankurttekin.andmenu.interfaces.CommandSearcher;
 import com.cankurttekin.andmenu.interfaces.EventLauncher;
@@ -21,7 +22,9 @@ import com.cankurttekin.andmenu.wrapperForAndroid.ContactsReader;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ContactSearchCommandSearcher implements CommandSearcher {
     public static final String PREF_CONTACT_SEARCH_ENABLED_KEY = "pref_contact_search_enabled";
@@ -159,8 +162,31 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
             }
         }
 
-        Collections.sort(resultList, (o1, o2) -> o1.first.compareTo(o2.first));
+        final boolean sortByUsage = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("pref_apps_sort_by_usage", false);
 
+        if (sortByUsage) {
+            final Map<String, Integer> usageCache = new HashMap<>();
+            for (Pair<Integer, ContactsReader.Contact> pair : resultList) {
+                String displayName = pair.second.displayName;
+                if (!usageCache.containsKey(displayName)) {
+                    usageCache.put(displayName, ContactUsageHistory.getUsageCount(context, displayName));
+                }
+            }
+
+            Collections.sort(resultList, (o1, o2) -> {
+                int scoreCompare = o1.first.compareTo(o2.first);
+                if (scoreCompare != 0) {
+                    return scoreCompare;
+                }
+                Integer u1 = usageCache.get(o1.second.displayName);
+                Integer u2 = usageCache.get(o2.second.displayName);
+                int usage1 = (u1 != null) ? u1 : 0;
+                int usage2 = (u2 != null) ? u2 : 0;
+                return Integer.compare(usage2, usage1); // Descending
+            });
+        } else {
+            Collections.sort(resultList, (o1, o2) -> o1.first.compareTo(o2.first));
+        }
 
         List<CandidateEntry> ret = new ArrayList<>();
         for (Pair<Integer, ContactsReader.Contact> contactPair: resultList) {
@@ -169,11 +195,11 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
             ret.add(new ContactCandidateEntry(contact));
 
             for (String phoneNumber: contact.phoneNumbers) {
-                ret.add(new PhoneNumberCandidateEntry(phoneNumber, context));
+                ret.add(new PhoneNumberCandidateEntry(phoneNumber, contact.displayName, context));
             }
 
             for (String emailAddress: contact.emailAddresses) {
-                ret.add(new EmailCandidateEntry(emailAddress, context));
+                ret.add(new EmailCandidateEntry(emailAddress, contact.displayName, context));
             }
         }
         return ret;
@@ -263,10 +289,12 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
 
     private static class PhoneNumberCandidateEntry implements CandidateEntry {
         private final String phoneNumber;
+        private final String contactDisplayName;
         private final String title;
 
-        private PhoneNumberCandidateEntry(String phoneNumber, Context context) {
+        private PhoneNumberCandidateEntry(String phoneNumber, String contactDisplayName, Context context) {
             this.phoneNumber = phoneNumber;
+            this.contactDisplayName = contactDisplayName;
             this.title = String.format(context.getString(R.string.contacts_action_dial_phone_number), this.phoneNumber);
         }
 
@@ -289,6 +317,7 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
         @Override
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
+                ContactUsageHistory.recordUsage(activity, PhoneNumberCandidateEntry.this.contactDisplayName);
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + Uri.encode(PhoneNumberCandidateEntry.this.phoneNumber)));
                 activity.startActivity(intent);
             };
@@ -317,10 +346,12 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
 
     private static class EmailCandidateEntry implements CandidateEntry {
         private final String emailAddresses;
+        private final String contactDisplayName;
         private final String title;
 
-        private EmailCandidateEntry(String emailAddress, Context context) {
+        private EmailCandidateEntry(String emailAddress, String contactDisplayName, Context context) {
             this.emailAddresses = emailAddress;
+            this.contactDisplayName = contactDisplayName;
             this.title = String.format(context.getString(R.string.contacts_action_email), this.emailAddresses);
         }
 
@@ -343,6 +374,7 @@ public class ContactSearchCommandSearcher implements CommandSearcher {
         @Override
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
+                ContactUsageHistory.recordUsage(activity, EmailCandidateEntry.this.contactDisplayName);
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + Uri.encode(EmailCandidateEntry.this.emailAddresses)));
                 activity.startActivity(intent);
             };
