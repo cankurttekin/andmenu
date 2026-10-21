@@ -24,6 +24,7 @@ import com.cankurttekin.andmenu.commands.applications.ApplicationDatabase;
 import com.cankurttekin.andmenu.commands.applications.ApplicationSettings;
 import com.cankurttekin.andmenu.commands.applications.ApplicationUsageHistory;
 import com.cankurttekin.andmenu.dataStore.cache.ApplicationInformation;
+import com.cankurttekin.andmenu.dataStore.persistent.HomeScreenSetting;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
 import com.cankurttekin.andmenu.interfaces.CommandSearcher;
 import com.cankurttekin.andmenu.interfaces.EventLauncher;
@@ -222,11 +223,23 @@ public class ApplicationCommandSearcher implements CommandSearcher {
             String packageName = applicationInformation.getPackageName();
             boolean isHidden = ApplicationSettings.isHidden(activity, packageName);
 
+            List<HomeScreenSetting.HomeScreenDefaultItem> homeItems = HomeScreenSetting.getInstance(activity).getAllHomeScreenDefaultItems();
+            HomeScreenSetting.HomeScreenDefaultItem existingPinnedItem = null;
+            for (HomeScreenSetting.HomeScreenDefaultItem item : homeItems) {
+                if (item.data.equalsIgnoreCase(title) || item.data.equalsIgnoreCase(packageName)) {
+                    existingPinnedItem = item;
+                    break;
+                }
+            }
+            final boolean isPinned = (existingPinnedItem != null);
+            final HomeScreenSetting.HomeScreenDefaultItem itemToUnpin = existingPinnedItem;
+
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setTitle(title);
             builder.setItems(new CharSequence[]{
                     activity.getString(R.string.menu_item_app_info),
                     activity.getString(R.string.menu_item_rename),
+                    isPinned ? activity.getString(R.string.menu_item_unpin) : activity.getString(R.string.menu_item_pin),
                     isHidden ? activity.getString(R.string.menu_item_unhide) : activity.getString(R.string.menu_item_hide),
                     activity.getString(R.string.menu_item_uninstall)
             }, (dialog, which) -> {
@@ -249,7 +262,20 @@ public class ApplicationCommandSearcher implements CommandSearcher {
                         renameBuilder.setNegativeButton(R.string.button_cancel, (dialog1, which1) -> dialog1.cancel());
                         renameBuilder.show();
                         break;
-                    case 2: // Hide / Unhide
+                    case 2: // Pin / Unpin
+                        if (isPinned && itemToUnpin != null) {
+                            HomeScreenSetting.getInstance(activity).deleteHomeScreenDefaultItem(itemToUnpin.id);
+                            Toast.makeText(activity, String.format(activity.getString(R.string.toast_unpinned_from_home), title), Toast.LENGTH_SHORT).show();
+                        } else {
+                            HomeScreenSetting.HomeScreenDefaultItem newItem = new HomeScreenSetting.HomeScreenDefaultItem();
+                            newItem.type = HomeScreenSetting.HOME_SCREEN_TYPE_COMMAND;
+                            newItem.data = packageName;
+                            HomeScreenSetting.getInstance(activity).addHomeScreenDefaultItem(newItem);
+                            Toast.makeText(activity, String.format(activity.getString(R.string.toast_pinned_to_home), title), Toast.LENGTH_SHORT).show();
+                        }
+                        activity.refreshSearch();
+                        break;
+                    case 3: // Hide / Unhide
                         if (isHidden) {
                             ApplicationSettings.unhideApp(activity, packageName);
                         } else {
@@ -257,7 +283,7 @@ public class ApplicationCommandSearcher implements CommandSearcher {
                         }
                         activity.refreshSearch();
                         break;
-                    case 3: // Uninstall
+                    case 4: // Uninstall
                         try {
                             Uri packageUri = Uri.parse("package:" + packageName);
                             Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageUri);

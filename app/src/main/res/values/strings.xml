@@ -215,6 +215,10 @@
     <string name="menu_item_hide">Hide</string>
     <string name="menu_item_unhide">Unhide</string>
     <string name="menu_item_uninstall">Uninstall</string>
+    <string name="menu_item_pin">Pin to home screen</string>
+    <string name="menu_item_unpin">Unpin from home screen</string>
+    <string name="toast_pinned_to_home">Pinned %1$s to home screen</string>
+    <string name="toast_unpinned_from_home">Unpinned %1$s from home screen</string>
     <string name="dialog_title_rename_format">Rename %1$s</string>
 
     <!-- Error messages, user errors -->
