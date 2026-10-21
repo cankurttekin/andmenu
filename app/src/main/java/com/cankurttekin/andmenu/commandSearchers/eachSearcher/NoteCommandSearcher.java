@@ -1,5 +1,7 @@
 package com.cankurttekin.andmenu.commandSearchers.eachSearcher;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -10,10 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
-
-import com.cankurttekin.andmenu.R;
 import androidx.preference.PreferenceManager;
 
+import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.applicationMain.MainActivity;
 import com.cankurttekin.andmenu.commandSearchers.lib.StringMatchStrategy;
 import com.cankurttekin.andmenu.dataStore.persistent.NoteEntry;
@@ -104,7 +105,8 @@ public class NoteCommandSearcher implements CommandSearcher {
         }
 
         if (!contentToAdd.isEmpty()) {
-            candidates.add(new AddNoteCandidateEntry(contentToAdd));
+            candidates.add(new AddNoteCandidateEntry(contentToAdd, -1));
+            candidates.add(new AddNoteCandidateEntry(contentToAdd, 0));
         }
 
         return candidates;
@@ -120,6 +122,9 @@ public class NoteCommandSearcher implements CommandSearcher {
         @NonNull
         @Override
         public String getTitle() {
+            if (note.isRegularNote()) {
+                return "• " + note.content;
+            }
             String checkMark = note.isCompleted ? "[✓] " : "[ ] ";
             return checkMark + note.content;
         }
@@ -132,8 +137,17 @@ public class NoteCommandSearcher implements CommandSearcher {
         @Override
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
-                NotePreferences.getInstance(activity).toggleNoteCompleted(note.id, note.isCompleted);
-                activity.refreshSearch();
+                if (note.isRegularNote()) {
+                    ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                    if (clipboard != null) {
+                        ClipData clip = ClipData.newPlainText("Note", note.content);
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(context, "Copied note to clipboard", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    NotePreferences.getInstance(activity).toggleNoteCompleted(note.id, note.isCompleted);
+                    activity.refreshSearch();
+                }
             };
         }
 
@@ -141,39 +155,62 @@ public class NoteCommandSearcher implements CommandSearcher {
         public void onLongClick(MainActivity activity) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setTitle(note.content);
-            CharSequence toggleText = note.isCompleted ? "Mark as incomplete" : "Mark as completed";
-            builder.setItems(new CharSequence[]{toggleText, "Edit note", "Delete note"}, (dialog, which) -> {
-                if (which == 0) { // Toggle
-                    NotePreferences.getInstance(activity).toggleNoteCompleted(note.id, note.isCompleted);
-                    activity.refreshSearch();
-                } else if (which == 1) { // Edit
-                    AlertDialog.Builder editBuilder = new AlertDialog.Builder(activity);
-                    editBuilder.setTitle("Edit Note");
 
-                    final EditText input = new EditText(activity);
-                    input.setText(note.content);
-                    LinearLayout layout = new LinearLayout(activity);
-                    layout.setOrientation(LinearLayout.VERTICAL);
-                    layout.setPadding(32, 16, 32, 16);
-                    layout.addView(input);
+            if (note.isRegularNote()) {
+                builder.setItems(new CharSequence[]{"Edit note", "Convert to To-Do", "Delete note"}, (dialog, which) -> {
+                    if (which == 0) { // Edit
+                        showEditDialog(activity);
+                    } else if (which == 1) { // Convert to To-Do
+                        NotePreferences.getInstance(activity).updateNoteType(note.id, 0);
+                        activity.refreshSearch();
+                    } else if (which == 2) { // Delete
+                        NotePreferences.getInstance(activity).deleteNote(note.id);
+                        Toast.makeText(activity, "Note deleted", Toast.LENGTH_SHORT).show();
+                        activity.refreshSearch();
+                    }
+                });
+            } else {
+                CharSequence toggleText = note.isCompleted ? "Mark as incomplete" : "Mark as completed";
+                builder.setItems(new CharSequence[]{toggleText, "Convert to Regular Note", "Edit note", "Delete note"}, (dialog, which) -> {
+                    if (which == 0) { // Toggle
+                        NotePreferences.getInstance(activity).toggleNoteCompleted(note.id, note.isCompleted);
+                        activity.refreshSearch();
+                    } else if (which == 1) { // Convert to Regular Note
+                        NotePreferences.getInstance(activity).updateNoteType(note.id, -1);
+                        activity.refreshSearch();
+                    } else if (which == 2) { // Edit
+                        showEditDialog(activity);
+                    } else if (which == 3) { // Delete
+                        NotePreferences.getInstance(activity).deleteNote(note.id);
+                        Toast.makeText(activity, "Note deleted", Toast.LENGTH_SHORT).show();
+                        activity.refreshSearch();
+                    }
+                });
+            }
+            builder.show();
+        }
 
-                    editBuilder.setView(layout);
-                    editBuilder.setPositiveButton(R.string.button_ok, (dialog1, which1) -> {
-                        String newContent = input.getText().toString().trim();
-                        if (!newContent.isEmpty()) {
-                            NotePreferences.getInstance(activity).updateNoteContent(note.id, newContent);
-                            activity.refreshSearch();
-                        }
-                    });
-                    editBuilder.setNegativeButton(R.string.button_cancel, (dialog1, which1) -> dialog1.cancel());
-                    editBuilder.show();
-                } else if (which == 2) { // Delete
-                    NotePreferences.getInstance(activity).deleteNote(note.id);
-                    Toast.makeText(activity, "Note deleted", Toast.LENGTH_SHORT).show();
+        private void showEditDialog(MainActivity activity) {
+            AlertDialog.Builder editBuilder = new AlertDialog.Builder(activity);
+            editBuilder.setTitle("Edit Note");
+
+            final EditText input = new EditText(activity);
+            input.setText(note.content);
+            LinearLayout layout = new LinearLayout(activity);
+            layout.setOrientation(LinearLayout.VERTICAL);
+            layout.setPadding(32, 16, 32, 16);
+            layout.addView(input);
+
+            editBuilder.setView(layout);
+            editBuilder.setPositiveButton(R.string.button_ok, (dialog1, which1) -> {
+                String newContent = input.getText().toString().trim();
+                if (!newContent.isEmpty()) {
+                    NotePreferences.getInstance(activity).updateNoteContent(note.id, newContent);
                     activity.refreshSearch();
                 }
             });
-            builder.show();
+            editBuilder.setNegativeButton(R.string.button_cancel, (dialog1, which1) -> dialog1.cancel());
+            editBuilder.show();
         }
 
         @Override
@@ -188,6 +225,9 @@ public class NoteCommandSearcher implements CommandSearcher {
 
         @Override
         public Drawable getIcon(Context context) {
+            if (note.isRegularNote()) {
+                return ContextCompat.getDrawable(context, android.R.drawable.ic_menu_edit);
+            }
             int iconRes = note.isCompleted ? android.R.drawable.checkbox_on_background : android.R.drawable.checkbox_off_background;
             return ContextCompat.getDrawable(context, iconRes);
         }
@@ -205,15 +245,20 @@ public class NoteCommandSearcher implements CommandSearcher {
 
     private static class AddNoteCandidateEntry implements CandidateEntry {
         private final String content;
+        private final int isCompletedStatus; // -1 for regular note, 0 for to-do
 
-        AddNoteCandidateEntry(String content) {
+        AddNoteCandidateEntry(String content, int isCompletedStatus) {
             this.content = content;
+            this.isCompletedStatus = isCompletedStatus;
         }
 
         @NonNull
         @Override
         public String getTitle() {
-            return "+ Add note/to-do: " + content;
+            if (isCompletedStatus == -1) {
+                return "+ Add regular note: " + content;
+            }
+            return "+ Add to-do item: " + content;
         }
 
         @Override
@@ -224,8 +269,9 @@ public class NoteCommandSearcher implements CommandSearcher {
         @Override
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
-                NotePreferences.getInstance(activity).addNote(content);
-                Toast.makeText(activity, "Note added", Toast.LENGTH_SHORT).show();
+                NotePreferences.getInstance(activity).addNote(content, isCompletedStatus);
+                String msg = isCompletedStatus == -1 ? "Note added" : "To-do added";
+                Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
                 activity.refreshSearch();
             };
         }
@@ -313,7 +359,7 @@ public class NoteCommandSearcher implements CommandSearcher {
         @NonNull
         @Override
         public String getTitle() {
-            return "- Clear completed notes/to-dos";
+            return "- Clear completed to-dos";
         }
 
         @Override
@@ -325,7 +371,7 @@ public class NoteCommandSearcher implements CommandSearcher {
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
                 NotePreferences.getInstance(activity).clearCompletedNotes();
-                Toast.makeText(activity, "Cleared completed notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Cleared completed to-dos", Toast.LENGTH_SHORT).show();
                 activity.refreshSearch();
             };
         }

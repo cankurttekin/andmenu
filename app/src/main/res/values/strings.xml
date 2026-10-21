@@ -117,6 +117,8 @@
     <string name="preferences_item_apps_show_package_name_summary">Note: You can find apps by a part of package name even this check is off.</string>
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
     <string name="preferences_item_apps_sort_by_usage_summary">Display frequently used apps at the top of the search results.</string>
+    <string name="preferences_item_apps_enable_category_search_title">Search apps by category</string>
+    <string name="preferences_item_apps_enable_category_search_summary">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
     <string name="preferences_item_display_custom_urls_title">Web pages and searches</string>
     <string name="preferences_item_default_search_title">Default Search Engine</string>
     <string name="preferences_item_default_search_summary">Always show specific search engine on the bottom of list</string>
@@ -140,6 +142,10 @@
     <string name="preferences_category_notes">Notes &amp; To-Do</string>
     <string name="preferences_item_note_enable_search">Enable notes &amp; to-do search</string>
     <string name="preferences_item_note_search_summary">Enable searching and managing notes and to-dos with \'n \'</string>
+
+    <string name="preferences_category_devtools">Developer Tools</string>
+    <string name="preferences_item_devtools_enable_search">Enable developer &amp; security tools</string>
+    <string name="preferences_item_devtools_search_summary">Enable tools for passwords, Base64, UUIDs, and hashes</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -259,6 +265,13 @@
         \n-&#032;c &lt;query&gt; - Contacts
         \n-&#032;b &lt;query&gt; - Bookmarks
         \n-&#032;n &lt;query&gt; - Notes &amp; To-Do
+        \n-&#032;ip&#032;- Local network IP &amp; MAC address
+        \n-&#032;dns &lt;domain&gt; - DNS lookup
+        \n-&#032;ping &lt;host&gt; - Ping host
+        \n-&#032;gen pass &lt;length&gt; - Password generator
+        \n-&#032;b64enc / b64dec - Base64 encoder/decoder
+        \n-&#032;uuid - Random UUIDv4 generator
+        \n-&#032;hash &lt;text&gt; - MD5 / SHA256 hashes
         \n-&#032;Calculation formula
         \n
         \nEXAMPLES
@@ -266,6 +279,11 @@
         \n-&#032;c alan turing
         \n-&#032;b github
         \n-&#032;n buy groceries
+        \n-&#032;ip&#032;
+        \n-&#032;gen pass 20
+        \n-&#032;b64enc hello
+        \n-&#032;uuid
+        \n-&#032;hash mytext
         \n-&#032;example@example.com
         \n-&#032;(8+6)*3
         \n-&#032;1inch in cm

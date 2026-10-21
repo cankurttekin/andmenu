@@ -40,6 +40,13 @@ One of commands below (e.g. help)
 - c &lt;query&gt; (contacts)
 - b &lt;query&gt; (bookmarks)
 - n &lt;query&gt; (notes and to-dos)
+- ip&#032; (local network IP, Wi-Fi SSID, MAC address)
+- dns [&lt;domain&gt;] (DNS servers &amp; domain lookup)
+- ping &lt;host&gt; / ping6 &lt;host&gt;
+- gen pass [&lt;length&gt;] / pass [&lt;length&gt;] (generate random password)
+- b64enc &lt;text&gt; / b64dec &lt;text&gt; (Base64 encoder/decoder)
+- uuid (generate random UUIDv4)
+- hash &lt;text&gt; / md5 &lt;text&gt; / sha256 &lt;text&gt; (generate MD5/SHA hashes)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)
 - Fuzzy application search (optional)
@@ -52,6 +59,8 @@ One of commands below (e.g. help)
 - Search and play audio files
 - Bookmarks management
 - Notes and To-Do list management
+- Developer &amp; Security Toolset (Password generator, Base64, UUID, MD5/SHA hashes - optional toggle)
+- Network Utilities (Local IP, Wi-Fi SSID, MAC address, DNS lookup, Ping)
 - Import/export configuration
 - Edit configuration file(json) in-app
 - Custom CSS support

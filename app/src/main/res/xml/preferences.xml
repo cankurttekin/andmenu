@@ -118,6 +118,13 @@
             android:defaultValue="false"
             app:iconSpaceReserved="false"
             />
+        <SwitchPreference
+            android:key="pref_apps_enable_category_search"
+            android:title="@string/preferences_item_apps_enable_category_search_title"
+            android:summary="@string/preferences_item_apps_enable_category_search_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/preferences_category_search_commands"
@@ -174,6 +181,13 @@
             android:title="@string/preferences_item_note_enable_search"
             android:summary="@string/preferences_item_note_search_summary"
             android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            />
+        <SwitchPreference
+            android:key="pref_devtools_search_enabled"
+            android:title="@string/preferences_item_devtools_enable_search"
+            android:summary="@string/preferences_item_devtools_search_summary"
+            android:defaultValue="false"
             app:iconSpaceReserved="false"
             />
     </PreferenceCategory>

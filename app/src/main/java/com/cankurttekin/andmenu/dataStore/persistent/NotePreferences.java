@@ -56,9 +56,13 @@ public class NotePreferences extends SQLiteOpenHelper {
     }
 
     public long addNote(String content) {
+        return addNote(content, -1);
+    }
+
+    public long addNote(String content, int isCompletedStatus) {
         ContentValues cv = new ContentValues();
         cv.put("content", content);
-        cv.put("is_completed", 0);
+        cv.put("is_completed", isCompletedStatus);
         cv.put("timestamp", System.currentTimeMillis());
         return this.getWritableDatabase().insert("notes", null, cv);
     }
@@ -72,6 +76,8 @@ public class NotePreferences extends SQLiteOpenHelper {
                 entry.id = cursor.getInt(cursor.getColumnIndex("id"));
                 entry.content = cursor.getString(cursor.getColumnIndex("content"));
                 entry.isCompleted = cursor.getInt(cursor.getColumnIndex("is_completed")) != 0;
+                // Preserve full integer value for regular notes (-1), incomplete todos (0), completed todos (1)
+                entry.isCompletedStatus = cursor.getInt(cursor.getColumnIndex("is_completed"));
                 entry.timestamp = cursor.getLong(cursor.getColumnIndex("timestamp"));
                 ret.add(entry);
             }
@@ -89,6 +95,12 @@ public class NotePreferences extends SQLiteOpenHelper {
         this.getWritableDatabase().update("notes", cv, "id = ?", new String[]{String.valueOf(id)});
     }
 
+    public void updateNoteType(int id, int isCompletedStatus) {
+        ContentValues cv = new ContentValues();
+        cv.put("is_completed", isCompletedStatus);
+        this.getWritableDatabase().update("notes", cv, "id = ?", new String[]{String.valueOf(id)});
+    }
+
     public void updateNoteContent(int id, String newContent) {
         ContentValues cv = new ContentValues();
         cv.put("content", newContent);
@@ -96,6 +108,6 @@ public class NotePreferences extends SQLiteOpenHelper {
     }
 
     public void clearCompletedNotes() {
-        this.getWritableDatabase().delete("notes", "is_completed != 0", null);
+        this.getWritableDatabase().delete("notes", "is_completed = 1", null);
     }
 }

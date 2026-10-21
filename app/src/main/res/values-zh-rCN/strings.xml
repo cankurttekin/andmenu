@@ -262,6 +262,9 @@
     <string name="theme_name_gruvbox">Gruvbox</string>
     <string name="weather_loading">Loading weather for %1$s…</string>
     <string name="preferences_item_music_enable_search">Enable music search</string>
+    <string name="preferences_category_devtools">开发者工具</string>
+    <string name="preferences_item_devtools_enable_search">启用开发者与安全工具搜索</string>
+    <string name="preferences_item_devtools_search_summary">启用密码生成、Base64、UUID 和哈希工具</string>
     <string name="preferences_item_advanced_text_config_title">Advanced Text Configuration</string>
     <string name="preferences_item_advanced_text_config_summary">Edit, Export, or Import full app setup as JSON.</string>
     <string name="preferences_item_advanced_export_config_title">Export Configuration</string>

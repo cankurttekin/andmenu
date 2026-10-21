@@ -26,8 +26,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -71,6 +73,13 @@ public class WeatherCommandSearcher implements CommandSearcher {
         return candidates;
     }
 
+    private static class HourlyForecastItem {
+        int dayOffset;
+        int hour;
+        String tempC;
+        String weatherCode;
+    }
+
     private static class WeatherCandidateEntry implements CandidateEntry {
         private final String city;
         private final String loadingText;
@@ -97,7 +106,7 @@ public class WeatherCommandSearcher implements CommandSearcher {
             TypedValue baseTextColor = new TypedValue();
             mainActivity.getTheme().resolveAttribute(R.attr.andmenuBaseTextColor, baseTextColor, true);
             textView.setTextColor(baseTextColor.data);
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
 
             String result = cache.get(city);
             if (result != null) {
@@ -156,8 +165,12 @@ public class WeatherCommandSearcher implements CommandSearcher {
                     } else {
                         result = errorText + " (HTTP " + responseCode + ")";
                     }
+                } catch (java.net.UnknownHostException e) {
+                    result = errorText + ": No internet connection";
+                } catch (java.net.SocketTimeoutException e) {
+                    result = errorText + ": Connection timed out";
                 } catch (Exception e) {
-                    result = errorText + ": " + e.getClass().getSimpleName();
+                    result = errorText + ": Network error";
                 } finally {
                     if (connection != null) {
                         connection.disconnect();
@@ -177,41 +190,65 @@ public class WeatherCommandSearcher implements CommandSearcher {
             JSONObject json = new JSONObject(jsonStr);
             StringBuilder sb = new StringBuilder();
 
+            int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+            String nowString = null;
             JSONArray currentArr = json.getJSONArray("current_condition");
             if (currentArr.length() > 0) {
                 JSONObject current = currentArr.getJSONObject(0);
                 String temp = current.getString("temp_C");
                 String code = current.getString("weatherCode");
-                String desc = current.getJSONArray("weatherDesc").getJSONObject(0).getString("value");
                 String feelsLike = current.getString("FeelsLikeC");
-
-                sb.append(getEmojiForCode(code)).append(" ").append(temp).append("°C (").append(desc).append(")\n");
-                sb.append("Feels like: ").append(feelsLike).append("°C\n\n");
+                nowString = "Now: " + getEmojiForCode(code, currentHour) + " " + temp + "°C (Feels like " + feelsLike + "°C)";
             }
 
             JSONArray weatherArr = json.getJSONArray("weather");
             if (weatherArr.length() > 0) {
-                sb.append("Hourly:\n");
-                JSONArray hourlyArr = weatherArr.getJSONObject(0).getJSONArray("hourly");
-                for (int i = 0; i < Math.min(8, hourlyArr.length()); i ++) {
-                    JSONObject h = hourlyArr.getJSONObject(i);
-                    String time = h.getString("time");
-
-                    int hour = Integer.parseInt(time);
-                    time = String.format("%02d:00", hour / 100);
-
-                    String hTemp = h.getString("tempC");
-                    String hCode = h.getString("weatherCode");
-
-                    sb.append(time)
-                        .append(": ")
-                        .append(getEmojiForCode(hCode))
-                        .append(" ")
-                        .append(hTemp)
-                        .append("°C\n");
-
+                List<HourlyForecastItem> allHourly = new ArrayList<>();
+                for (int day = 0; day < Math.min(2, weatherArr.length()); day++) {
+                    JSONArray hArr = weatherArr.getJSONObject(day).getJSONArray("hourly");
+                    for (int i = 0; i < hArr.length(); i++) {
+                        JSONObject h = hArr.getJSONObject(i);
+                        HourlyForecastItem item = new HourlyForecastItem();
+                        item.dayOffset = day;
+                        item.hour = Integer.parseInt(h.getString("time")) / 100;
+                        item.tempC = h.getString("tempC");
+                        item.weatherCode = h.getString("weatherCode");
+                        allHourly.add(item);
+                    }
                 }
-                sb.append("\nForecast:\n");
+
+                int currentIntervalIdx = 0;
+                for (int i = 0; i < allHourly.size(); i++) {
+                    HourlyForecastItem item = allHourly.get(i);
+                    if (item.dayOffset == 0 && currentHour >= item.hour) {
+                        currentIntervalIdx = i;
+                    }
+                }
+
+                int pastIdx = currentIntervalIdx;
+                HourlyForecastItem pastItem = allHourly.get(pastIdx);
+                String pastTimeStr = String.format(Locale.US, "%02d:00: ", pastItem.hour)
+                        + getEmojiForCode(pastItem.weatherCode, pastItem.hour) + " " + pastItem.tempC + "°C";
+                sb.append(pastTimeStr).append("\n");
+
+                if (nowString != null) {
+                    sb.append(nowString).append("\n");
+                }
+
+                int count = 0;
+                for (int i = pastIdx + 1; i < allHourly.size() && count < 6; i++, count++) {
+                    HourlyForecastItem item = allHourly.get(i);
+                    String timeFormatted = String.format(Locale.US, "%02d:00", item.hour);
+                    sb.append(timeFormatted)
+                            .append(": ")
+                            .append(getEmojiForCode(item.weatherCode, item.hour))
+                            .append(" ")
+                            .append(item.tempC)
+                            .append("°C\n");
+                }
+
+                sb.append("\n3-Day Forecast:\n");
                 for (int i = 0; i < Math.min(3, weatherArr.length()); i++) {
                     JSONObject day = weatherArr.getJSONObject(i);
                     String date = day.getString("date");
@@ -219,16 +256,17 @@ public class WeatherCommandSearcher implements CommandSearcher {
                     String min = day.getString("mintempC");
                     String dayCode = day.getJSONArray("hourly").getJSONObject(4).getString("weatherCode");
 
-                    sb.append(date).append(": ").append(getEmojiForCode(dayCode)).append(" ").append(min).append("/").append(max).append("°C\n");
+                    sb.append(date).append(": ").append(getEmojiForCode(dayCode, 12)).append(" ").append(min).append("/").append(max).append("°C\n");
                 }
             }
             return sb.toString();
         }
 
-        private String getEmojiForCode(String code) {
+        private String getEmojiForCode(String code, int hour) {
+            boolean isNight = hour >= 21 || hour < 6;
             switch (code) {
-                case "113": return "☀️";
-                case "116": return "⛅️";
+                case "113": return isNight ? "🌙" : "☀️";
+                case "116": return isNight ? "☁️" : "⛅️";
                 case "119":
                 case "122": return "☁️";
                 case "143":

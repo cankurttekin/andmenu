@@ -96,8 +96,17 @@ public class ApplicationCommandSearcher implements CommandSearcher {
             int packageNameMatchResult = StringMatchStrategy.match(query, applicationInformation.getPackageName(), false, matchStrategy);
             if (packageNameMatchResult != -1) {
                 appCandidates.add(new Pair<>(100000 + packageNameMatchResult, new AppOpenCandidateEntry(context, applicationInformation, androidApplicationInfo, appLabel)));
-                //noinspection UnnecessaryContinue
                 continue;
+            }
+
+            final boolean enableCategorySearch = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("pref_apps_enable_category_search", true);
+            if (enableCategorySearch && androidApplicationInfo != null) {
+                int categoryMatchResult = matchCategory(context, androidApplicationInfo, query, matchStrategy);
+                if (categoryMatchResult != -1) {
+                    appCandidates.add(new Pair<>(200000 + categoryMatchResult, new AppOpenCandidateEntry(context, applicationInformation, androidApplicationInfo, appLabel)));
+                    //noinspection UnnecessaryContinue
+                    continue;
+                }
             }
         }
 
@@ -272,5 +281,57 @@ public class ApplicationCommandSearcher implements CommandSearcher {
         public boolean viewIsRecyclable() {
             return true;
         }
+    }
+
+    private static int matchCategory(Context context, ApplicationInfo appInfo, String query, int matchStrategy) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O || appInfo == null) {
+            return -1;
+        }
+        int category = appInfo.category;
+        if (category == ApplicationInfo.CATEGORY_UNDEFINED) {
+            return -1;
+        }
+
+        CharSequence categoryTitle = ApplicationInfo.getCategoryTitle(context, category);
+        if (categoryTitle != null) {
+            int match = StringMatchStrategy.match(query, categoryTitle.toString(), false, matchStrategy);
+            if (match != -1) {
+                return match;
+            }
+        }
+
+        String lowerQuery = query.toLowerCase().trim();
+        boolean matched = false;
+        switch (category) {
+            case ApplicationInfo.CATEGORY_GAME:
+                matched = lowerQuery.equals("game") || lowerQuery.equals("games");
+                break;
+            case ApplicationInfo.CATEGORY_AUDIO:
+                matched = lowerQuery.equals("audio") || lowerQuery.equals("music");
+                break;
+            case ApplicationInfo.CATEGORY_VIDEO:
+                matched = lowerQuery.equals("video") || lowerQuery.equals("videos") || lowerQuery.equals("movie") || lowerQuery.equals("movies");
+                break;
+            case ApplicationInfo.CATEGORY_IMAGE:
+                matched = lowerQuery.equals("image") || lowerQuery.equals("images") || lowerQuery.equals("photo") || lowerQuery.equals("photos");
+                break;
+            case ApplicationInfo.CATEGORY_SOCIAL:
+                matched = lowerQuery.equals("social");
+                break;
+            case ApplicationInfo.CATEGORY_NEWS:
+                matched = lowerQuery.equals("news");
+                break;
+            case ApplicationInfo.CATEGORY_MAPS:
+                matched = lowerQuery.equals("map") || lowerQuery.equals("maps") || lowerQuery.equals("navigation");
+                break;
+            case ApplicationInfo.CATEGORY_PRODUCTIVITY:
+                matched = lowerQuery.equals("productivity") || lowerQuery.equals("office") || lowerQuery.equals("tools");
+                break;
+            case ApplicationInfo.CATEGORY_ACCESSIBILITY:
+                matched = lowerQuery.equals("accessibility");
+                break;
+        }
+
+        return matched ? 0 : -1;
     }
 }

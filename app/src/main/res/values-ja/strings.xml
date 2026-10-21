@@ -263,6 +263,9 @@
     </string>
     <string name="weather_loading">Loading weather for %1$s…</string>
     <string name="preferences_item_music_enable_search">Enable music search</string>
+    <string name="preferences_category_devtools">開発者ツール</string>
+    <string name="preferences_item_devtools_enable_search">開発者・セキュリティツールの検索を有効にする</string>
+    <string name="preferences_item_devtools_search_summary">パスワード生成、Base64、UUID、ハッシュなどのツールを有効にします</string>
     <string name="preferences_item_advanced_text_config_title">Advanced Text Configuration</string>
     <string name="preferences_item_advanced_text_config_summary">Edit, Export, or Import full app setup as JSON.</string>
     <string name="preferences_item_advanced_export_config_title">Export Configuration</string>
