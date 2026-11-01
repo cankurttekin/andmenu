@@ -10,6 +10,7 @@ import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ColorDisplayComman
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.ContactSearchCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DateCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DevToolsCommandSearcher;
+import com.cankurttekin.andmenu.commandSearchers.eachSearcher.DictionaryCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.EmailCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.FactorCommandSearcher;
 import com.cankurttekin.andmenu.commandSearchers.eachSearcher.HelpCommandSearcher;
@@ -50,6 +51,7 @@ public class CommandSearchAggregator {
         commandSearcherList.add(new EmailCommandSearcher());
         commandSearcherList.add(new NetUtilCommandSearcher());
         commandSearcherList.add(new DevToolsCommandSearcher());
+        commandSearcherList.add(new DictionaryCommandSearcher());
         commandSearcherList.add(new CalendarCommandSearcher());
         commandSearcherList.add(new FactorCommandSearcher());
         commandSearcherList.add(new WeatherCommandSearcher());

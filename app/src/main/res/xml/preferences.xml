@@ -190,6 +190,13 @@
             android:defaultValue="false"
             app:iconSpaceReserved="false"
             />
+        <SwitchPreference
+            android:key="pref_dictionary_search_enabled"
+            android:title="@string/preferences_item_dictionary_enable_search"
+            android:summary="@string/preferences_item_dictionary_search_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/preferences_category_home_screen"

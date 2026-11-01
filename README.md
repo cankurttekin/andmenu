@@ -47,6 +47,7 @@ One of commands below (e.g. help)
 - b64enc &lt;text&gt; / b64dec &lt;text&gt; (Base64 encoder/decoder)
 - uuid (generate random UUIDv4)
 - hash &lt;text&gt; / md5 &lt;text&gt; / sha256 &lt;text&gt; (generate MD5/SHA hashes)
+- define &lt;word&gt; (dictionary definitions)
 
 ### Additional features to [Blue Line Console](https://github.com/nhirokinet/bluelineconsole)
 - Fuzzy application search (optional)

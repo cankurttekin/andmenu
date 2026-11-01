@@ -146,6 +146,10 @@
     <string name="preferences_category_devtools">Developer Tools</string>
     <string name="preferences_item_devtools_enable_search">Enable developer &amp; security tools</string>
     <string name="preferences_item_devtools_search_summary">Enable tools for passwords, Base64, UUIDs, and hashes</string>
+
+    <string name="preferences_category_dictionary">Dictionary</string>
+    <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
+    <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -276,6 +280,7 @@
         \n-&#032;b64enc / b64dec - Base64 encoder/decoder
         \n-&#032;uuid - Random UUIDv4 generator
         \n-&#032;hash &lt;text&gt; - MD5 / SHA256 hashes
+        \n-&#032;define &lt;word&gt; - Dictionary definitions
         \n-&#032;Calculation formula
         \n
         \nEXAMPLES
@@ -283,6 +288,7 @@
         \n-&#032;c alan turing
         \n-&#032;b github
         \n-&#032;n buy groceries
+        \n-&#032;define ubiquitous
         \n-&#032;ip&#032;
         \n-&#032;gen pass 20
         \n-&#032;b64enc hello
