@@ -27,6 +27,8 @@ android {
         minSdkVersion 23
         targetSdkVersion 36
         
+        vectorDrawables.generatedDensities = []
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -45,12 +47,18 @@ android {
             minifyEnabled true
             shrinkResources true
             crunchPngs false
+            vcsInfo.include = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             if (releaseSigningConfigured) {
                 signingConfig signingConfigs.release
             }
         }
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 
     compileOptions {
