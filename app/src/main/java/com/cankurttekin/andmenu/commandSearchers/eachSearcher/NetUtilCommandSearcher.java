@@ -70,11 +70,7 @@ public class NetUtilCommandSearcher implements CommandSearcher {
     public List<CandidateEntry> searchCandidateEntries(String s, Context context) {
         List<CandidateEntry> ret = new ArrayList<>();
 
-        String trimmed = s.trim();
-        String lower = trimmed.toLowerCase();
-
-        // Must start with "ip " or be "ip " exactly
-        if (s.startsWith("ip ") || lower.equals("ip ")) {
+        if (s.startsWith("ip ") || s.equalsIgnoreCase("ip ")) {
             List<Pair<String, String>> localIps = getFilteredLocalIpAddresses();
             String ssid = getWifiSSID(context);
             List<Pair<String, String>> macs = getMacAddresses();
@@ -82,7 +78,7 @@ public class NetUtilCommandSearcher implements CommandSearcher {
             return ret;
         }
 
-        if (lower.equals("dns")) {
+        if (s.equalsIgnoreCase("dns")) {
             List<String> systemDns = getSystemDnsServers(context);
             for (String dns : systemDns) {
                 ret.add(new CopyToClipboardCandidateEntry("System DNS Server", dns));
@@ -91,8 +87,8 @@ public class NetUtilCommandSearcher implements CommandSearcher {
             return ret;
         }
 
-        if (lower.startsWith("dns ")) {
-            String domain = trimmed.substring(4).trim();
+        if (s.toLowerCase().startsWith("dns ")) {
+            String domain = s.substring(4).trim();
             if (!domain.isEmpty()) {
                 if (dnsCache.containsKey(domain)) {
                     List<String> ips = dnsCache.get(domain);
@@ -113,14 +109,14 @@ public class NetUtilCommandSearcher implements CommandSearcher {
             return ret;
         }
 
-        if (lower.equals("ping")) {
+        if (s.equalsIgnoreCase("ping")) {
             if (this._pingAvailable) {
                 ret.add(new CopyToClipboardCandidateEntry("Ping Command", "Usage: ping <host>", false));
             }
             return ret;
         }
 
-        if (lower.equals("ping6")) {
+        if (s.equalsIgnoreCase("ping6")) {
             if (this._ping6Available) {
                 ret.add(new CopyToClipboardCandidateEntry("Ping6 Command", "Usage: ping6 <host>", false));
             }
@@ -135,12 +131,12 @@ public class NetUtilCommandSearcher implements CommandSearcher {
             if (!query.contains(" ") && (query.length() == 0 || query.charAt(0) != '-')) {
                 if (this._pingAvailable && PingActivity.TARGET_COMMAND_SHORT.startsWith(engine)) {
                     if (StringMatchStrategy.match(context, engine, PingActivity.TARGET_COMMAND_SHORT, true) != -1) {
-                        ret.add(new PingCandidateEntry(s.split(" ", 2)[1]));
+                        ret.add(new PingCandidateEntry(query));
                     }
                 }
                 if (this._ping6Available && Ping6Activity.TARGET_COMMAND_SHORT.startsWith(engine)) {
                     if (StringMatchStrategy.match(context, engine, Ping6Activity.TARGET_COMMAND_SHORT, true) != -1) {
-                        ret.add(new Ping6CandidateEntry(s.split(" ", 2)[1]));
+                        ret.add(new Ping6CandidateEntry(query));
                     }
                 }
             }
