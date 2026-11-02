@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -13,12 +14,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
-
 import androidx.preference.PreferenceManager;
 
 import com.cankurttekin.andmenu.R;
 import com.cankurttekin.andmenu.applicationMain.MainActivity;
 import com.cankurttekin.andmenu.commandSearchers.lib.StringMatchStrategy;
+import com.cankurttekin.andmenu.commands.bookmarks.BookmarkUsageHistory;
 import com.cankurttekin.andmenu.dataStore.persistent.BookmarkEntry;
 import com.cankurttekin.andmenu.dataStore.persistent.BookmarkPreferences;
 import com.cankurttekin.andmenu.interfaces.CandidateEntry;
@@ -27,6 +28,7 @@ import com.cankurttekin.andmenu.interfaces.EventLauncher;
 import com.cankurttekin.andmenu.lib.StringValidator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BookmarkCommandSearcher implements CommandSearcher {
@@ -63,8 +65,16 @@ public class BookmarkCommandSearcher implements CommandSearcher {
 
         BookmarkPreferences db = BookmarkPreferences.getInstance(context);
         List<BookmarkEntry> allBookmarks = db.getAllBookmarks();
+        final boolean sortByUsage = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("pref_apps_sort_by_usage", false);
 
         if (subQuery.isEmpty()) {
+            if (sortByUsage) {
+                Collections.sort(allBookmarks, (b1, b2) -> {
+                    int u1 = BookmarkUsageHistory.getUsageCount(context, b1.name);
+                    int u2 = BookmarkUsageHistory.getUsageCount(context, b2.name);
+                    return Integer.compare(u2, u1); // Descending
+                });
+            }
             for (BookmarkEntry entry : allBookmarks) {
                 candidates.add(new BookmarkItemCandidateEntry(entry));
             }
@@ -115,11 +125,40 @@ public class BookmarkCommandSearcher implements CommandSearcher {
             return candidates;
         }
 
+        List<Pair<Integer, BookmarkEntry>> matchedBookmarks = new ArrayList<>();
         for (BookmarkEntry entry : allBookmarks) {
-            if (StringMatchStrategy.match(context, subQuery, entry.name, false) != -1 ||
-                    StringMatchStrategy.match(context, subQuery, entry.url, false) != -1) {
-                candidates.add(new BookmarkItemCandidateEntry(entry));
+            int nameMatch = StringMatchStrategy.match(context, subQuery, entry.name, false);
+            int urlMatch = StringMatchStrategy.match(context, subQuery, entry.url, false);
+            int bestMatch = -1;
+            if (nameMatch != -1 && urlMatch != -1) {
+                bestMatch = Math.min(nameMatch, urlMatch);
+            } else if (nameMatch != -1) {
+                bestMatch = nameMatch;
+            } else if (urlMatch != -1) {
+                bestMatch = urlMatch;
             }
+
+            if (bestMatch != -1) {
+                matchedBookmarks.add(new Pair<>(bestMatch, entry));
+            }
+        }
+
+        if (sortByUsage) {
+            Collections.sort(matchedBookmarks, (o1, o2) -> {
+                int scoreCompare = o1.first.compareTo(o2.first);
+                if (scoreCompare != 0) {
+                    return scoreCompare;
+                }
+                int u1 = BookmarkUsageHistory.getUsageCount(context, o1.second.name);
+                int u2 = BookmarkUsageHistory.getUsageCount(context, o2.second.name);
+                return Integer.compare(u2, u1); // Descending
+            });
+        } else {
+            Collections.sort(matchedBookmarks, (o1, o2) -> o1.first.compareTo(o2.first));
+        }
+
+        for (Pair<Integer, BookmarkEntry> pair : matchedBookmarks) {
+            candidates.add(new BookmarkItemCandidateEntry(pair.second));
         }
 
         if (StringValidator.isValidURLAccepted(subQuery, false, context)) {
@@ -158,6 +197,7 @@ public class BookmarkCommandSearcher implements CommandSearcher {
         @Override
         public EventLauncher getEventLauncher(Context context) {
             return activity -> {
+                BookmarkUsageHistory.recordUsage(activity, bookmark.name);
                 try {
                     activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(bookmark.url)));
                     activity.finishIfNotHome();
@@ -173,6 +213,7 @@ public class BookmarkCommandSearcher implements CommandSearcher {
             builder.setTitle(bookmark.name);
             builder.setItems(new CharSequence[]{"Open", "Edit", "Delete"}, (dialog, which) -> {
                 if (which == 0) { // Open
+                    BookmarkUsageHistory.recordUsage(activity, bookmark.name);
                     try {
                         activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(bookmark.url)));
                         activity.finishIfNotHome();
