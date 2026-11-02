@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">andmenu</string>
-    <string name="app_source_code_url" translatable="false">https://github.com/cankurttekin/andmenu</string>
+    <string name="app_source_code_url">https://github.com/cankurttekin/andmenu</string>
     <string name="preferences_item_about_this_app_github_repo">andmenu on GitHub</string>
     <string name="preferences_item_about_this_app_github_repo_summary">Access https://github.com/cankurttekin/andmenu</string>
 
@@ -117,8 +117,8 @@
     <string name="preferences_item_apps_show_package_name_summary">Note: You can find apps by a part of package name even this check is off.</string>
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
     <string name="preferences_item_apps_sort_by_usage_summary">Display frequently used apps at the top of the search results.</string>
-    <string name="preferences_item_apps_enable_category_search_title" translatable="false">Search apps by category</string>
-    <string name="preferences_item_apps_enable_category_search_summary" translatable="false">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
+    <string name="preferences_item_apps_enable_category_search_title">Search apps by category</string>
+    <string name="preferences_item_apps_enable_category_search_summary">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
     <string name="preferences_item_display_custom_urls_title">Web pages and searches</string>
     <string name="preferences_item_default_search_title">Default Search Engine</string>
     <string name="preferences_item_default_search_summary">Always show specific search engine on the bottom of list</string>
@@ -135,21 +135,21 @@
     <string name="preferences_item_music_enable_search">Enable music search</string>
     <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
 
-    <string name="preferences_category_bookmarks" translatable="false">Bookmarks</string>
-    <string name="preferences_item_bookmark_enable_search" translatable="false">Enable bookmarks search</string>
-    <string name="preferences_item_bookmark_search_summary" translatable="false">Enable searching and managing saved bookmarks with \'b \'</string>
+    <string name="preferences_category_bookmarks">Bookmarks</string>
+    <string name="preferences_item_bookmark_enable_search">Enable bookmarks search</string>
+    <string name="preferences_item_bookmark_search_summary">Enable searching and managing saved bookmarks with \'b \'</string>
 
-    <string name="preferences_category_notes" translatable="false">Notes &amp; To-Do</string>
-    <string name="preferences_item_note_enable_search" translatable="false">Enable notes &amp; to-do search</string>
-    <string name="preferences_item_note_search_summary" translatable="false">Enable searching and managing notes and to-dos with \'n \'</string>
+    <string name="preferences_category_notes">Notes &amp; To-Do</string>
+    <string name="preferences_item_note_enable_search">Enable notes &amp; to-do search</string>
+    <string name="preferences_item_note_search_summary">Enable searching and managing notes and to-dos with \'n \'</string>
 
     <string name="preferences_category_devtools">Developer Tools</string>
     <string name="preferences_item_devtools_enable_search">Enable developer &amp; security tools</string>
     <string name="preferences_item_devtools_search_summary">Enable tools for passwords, Base64, UUIDs, and hashes</string>
 
-    <string name="preferences_category_dictionary" translatable="false">Dictionary</string>
-    <string name="preferences_item_dictionary_enable_search" translatable="false">Enable dictionary definitions</string>
-    <string name="preferences_item_dictionary_search_summary" translatable="false">Enable word definitions with \'define &lt;word&gt;\'</string>
+    <string name="preferences_category_dictionary">Dictionary</string>
+    <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
+    <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -219,10 +219,10 @@
     <string name="menu_item_hide">Hide</string>
     <string name="menu_item_unhide">Unhide</string>
     <string name="menu_item_uninstall">Uninstall</string>
-    <string name="menu_item_pin" translatable="false">Pin to home screen</string>
-    <string name="menu_item_unpin" translatable="false">Unpin from home screen</string>
-    <string name="toast_pinned_to_home" translatable="false">Pinned %1$s to home screen</string>
-    <string name="toast_unpinned_from_home" translatable="false">Unpinned %1$s from home screen</string>
+    <string name="menu_item_pin">Pin to home screen</string>
+    <string name="menu_item_unpin">Unpin from home screen</string>
+    <string name="toast_pinned_to_home">Pinned %1$s to home screen</string>
+    <string name="toast_unpinned_from_home">Unpinned %1$s from home screen</string>
     <string name="dialog_title_rename_format">Rename %1$s</string>
 
     <!-- Error messages, user errors -->
@@ -244,7 +244,7 @@
     <string name="startup_help_title_for_header_and_footer">Notification</string>
     <string name="startup_help_title">About help command</string>
     <string name="startup_help_body_part1">To show usage, enter</string>
-    <string name="startup_help_body_part2" translatable="false">help</string>
+    <string name="startup_help_body_part2">help</string>
     <string name="startup_help_body_part3">to see what to do.</string>
     <string name="startup_help_check_never_later">Don\'t show this message again</string>
 
@@ -347,7 +347,7 @@
     </string>
 
     <!-- Licensing information, untranslatable not to make slightest difference -->
-    <string name="licensing_notice_header" translatable="false">License information</string>
+    <string name="licensing_notice_header">License information</string>
     <string name="licensing_notice_body" translatable="false">
         andmenu is licensed under the Apache License, Version 2.0.
         \n
@@ -363,5 +363,5 @@
     </string>
 
     <!-- Legal English texts -->
-    <string name="license_apache_license_v2.0_name" translatable="false">Apache License, Version 2.0</string>
+    <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
 </resources>

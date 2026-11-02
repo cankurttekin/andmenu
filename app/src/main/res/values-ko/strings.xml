@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">andmenu</string>
+    <string name="app_source_code_url">https://github.com/cankurttekin/andmenu</string>
     <string name="preferences_item_about_this_app_github_repo">andmenu on GitHub</string>
     <string name="preferences_item_about_this_app_github_repo_summary">https://github.com/cankurttekin/andmenu 에 접근</string>
 
@@ -79,6 +80,7 @@
     <string name="preferences_category_main">일반</string>
     <string name="preferences_category_apps">앱 기동</string>
     <string name="preferences_category_appearance">스타일</string>
+    <string name="preferences_category_search_commands">Search Commands</string>
     <string name="preferences_category_urls">웹 페이지와 웹 검색</string>
     <string name="preferences_category_custom_commands">커스텀 명령어</string>
     <string name="preferences_category_home_screen">홈 화면</string>
@@ -108,6 +110,7 @@
     <string name="preferences_item_apps_show_package_name_summary">이 옵션이 비활성화되어도 package name으로 앱을 검색 할 수 있습니다.</string>
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
     <string name="preferences_item_apps_sort_by_usage_summary">Display frequently used apps at the top of the search results.</string>
+    <string name="preferences_item_apps_enable_category_search_summary">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
     <string name="preferences_item_display_custom_urls_title">URL와 검색 엔진 설정</string>
     <string name="preferences_item_default_search_title">디폴트 검색 엔진</string>
     <string name="preferences_item_default_search_summary">설정된 검색 엔진으로의 웹 검색을 결과로 표시합니다.</string>
@@ -121,6 +124,9 @@
     <string name="preferences_item_contacts_enable_search">주소록 검색</string>
     <string name="preferences_item_contacts_search_permission_explanation">활성화하기 위해는 주소록 접근 권한이 필요합니다. 별도 허용 조작이 필요할 수 있습니다.</string>
     <string name="preferences_item_music_search_permission_explanation">Enabling music search requires permission to read audio files from your device.</string>
+    <string name="preferences_category_dictionary">Dictionary</string>
+    <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
+    <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">명령어 입력창의 언어를 영어로 IME에 지시</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">명령어 입력창에 setImeHintLocales 를 통해 영어 입력으로 지시합니다. IME에 따라 동작이 다릅니다.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">명령어 입력창의 IME_FLAG_FORCE_ASCII 를 활성화</string>
@@ -178,6 +184,7 @@
     <string name="factor_error_factor_too_large">%1$s보다 큰 소인수을 포함합니다</string>
 
     <!-- Error messages, user errors -->
+    <string name="toast_unpinned_from_home">Unpinned %1$s from home screen</string>
     <string name="dialog_title_rename_format">Rename %1$s</string>
     <string name="error_invalid_url_least_validation_for_web">URL 포맷 부정: https:// 나 http:// 로 시작해, 더 하나 이상 슬래시(\"/\")를 포함할 필요가 있습니다</string>
     <string name="error_invalid_url_least_validation_for_web_arbitrary_schema">URL 포맷 오류: &lt;scheme&gt;:// 로 시작해, 더 하나 이상 슬래시(\"/\")를 포함할 필요가 있습니다</string>
@@ -197,6 +204,7 @@
     <string name="startup_help_title_for_header_and_footer">Notification</string>
     <string name="startup_help_title">help 명령어</string>
     <string name="startup_help_body_part1">명령어로</string>
+    <string name="startup_help_body_part2">help</string>
     <string name="startup_help_body_part3">을 입력하시면 사용 방법을 표시 합니다.</string>
     <string name="startup_help_check_never_later">다음부터 표시하지 않음</string>
 
@@ -260,10 +268,22 @@
     <string name="theme_name_gruvbox">Gruvbox</string>
     <string name="weather_loading">Loading weather for %1$s…</string>
     <string name="preferences_item_music_enable_search">Enable music search</string>
+    <string name="preferences_item_note_search_summary">Enable searching and managing notes and to-dos with \'n \'</string>
     <string name="preferences_category_devtools">개발자 도구</string>
     <string name="preferences_item_devtools_enable_search">개발자 및 보안 도구 검색 활성화</string>
     <string name="preferences_item_devtools_search_summary">비밀번호 생성, Base64, UUID 및 해시 도구 활성화</string>
     <string name="preferences_item_advanced_text_config_title">Advanced Text Configuration</string>
     <string name="preferences_item_advanced_text_config_summary">Edit, Export, or Import full app setup as JSON.</string>
     <string name="preferences_item_advanced_export_config_title">Export Configuration</string>
+    <string name="menu_item_pin">Pin to home screen</string>
+    <string name="menu_item_unpin">Unpin from home screen</string>
+    <string name="toast_pinned_to_home">Pinned %1$s to home screen</string>
+    <string name="preferences_category_bookmarks">Bookmarks</string>
+    <string name="preferences_item_bookmark_enable_search">Enable bookmarks search</string>
+    <string name="preferences_item_bookmark_search_summary">Enable searching and managing saved bookmarks with \'b \'</string>
+    <string name="preferences_category_notes">Notes &amp; To-Do</string>
+    <string name="preferences_item_note_enable_search">Enable notes &amp; to-do search</string>
+    <string name="preferences_item_apps_enable_category_search_title">Search apps by category</string>
+    <string name="licensing_notice_header">License information</string>
+    <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
 </resources>

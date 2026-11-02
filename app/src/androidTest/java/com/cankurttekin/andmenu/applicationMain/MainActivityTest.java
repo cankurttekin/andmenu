@@ -92,14 +92,24 @@ public class MainActivityTest extends AndroidTestCase {
         onView(withId(R.id.mainInputText)).perform(clearText());
         onView(withId(R.id.mainInputText)).perform(typeText("ping "));
         Thread.sleep(800);
-        onView(withText("ping6 ")).check(matches(isDisplayed()));
-        onView(withId(R.id.candidateListView)).check(matches(hasChildCount(2)));
+        if (com.cankurttekin.andmenu.commands.netutils.Ping6Activity.commandAvailable()) {
+            onView(withText("ping6 ")).check(matches(isDisplayed()));
+            onView(withId(R.id.candidateListView)).check(matches(hasChildCount(2)));
+        } else if (com.cankurttekin.andmenu.commands.netutils.PingActivity.commandAvailable()) {
+            onView(withText("ping ")).check(matches(isDisplayed()));
+            onView(withId(R.id.candidateListView)).check(matches(hasChildCount(1)));
+        }
 
         onView(withId(R.id.mainInputText)).perform(clearText());
         onView(withId(R.id.mainInputText)).perform(typeText("ping cankurttekin.com"));
         Thread.sleep(800);
-        onView(withText("ping6 cankurttekin.com")).check(matches(isDisplayed()));
-        onView(withId(R.id.candidateListView)).check(matches(hasChildCount(2)));
+        if (com.cankurttekin.andmenu.commands.netutils.Ping6Activity.commandAvailable()) {
+            onView(withText("ping6 cankurttekin.com")).check(matches(isDisplayed()));
+            onView(withId(R.id.candidateListView)).check(matches(hasChildCount(2)));
+        } else if (com.cankurttekin.andmenu.commands.netutils.PingActivity.commandAvailable()) {
+            onView(withText("ping cankurttekin.com")).check(matches(isDisplayed()));
+            onView(withId(R.id.candidateListView)).check(matches(hasChildCount(1)));
+        }
 
         onView(withId(R.id.mainInputText)).perform(clearText());
         onView(withId(R.id.mainInputText)).perform(typeText("1+7*4"));
