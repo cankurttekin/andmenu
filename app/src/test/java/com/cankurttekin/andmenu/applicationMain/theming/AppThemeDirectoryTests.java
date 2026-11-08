@@ -2,6 +2,9 @@ package com.cankurttekin.andmenu.applicationMain.theming;
 
 import static org.junit.Assert.assertTrue;
 
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberDarkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicDarkTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicLightTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicTheme;
@@ -37,6 +40,10 @@ public class AppThemeDirectoryTests {
         assertTrue("Pastel pink theme should be loaded", AppThemeDirectory.loadAppTheme("pastel_pink") instanceof PastelPinkTheme);
         assertTrue("Pastel pink light theme should be loaded", AppThemeDirectory.loadAppTheme("pastel_pink_light") instanceof PastelPinkLightTheme);
         assertTrue("Pastel pink dark theme should be loaded", AppThemeDirectory.loadAppTheme("pastel_pink_dark") instanceof PastelPinkDarkTheme);
+
+        assertTrue("Amber theme should be loaded", AppThemeDirectory.loadAppTheme("amber") instanceof AmberTheme);
+        assertTrue("Amber light theme should be loaded", AppThemeDirectory.loadAppTheme("amber_light") instanceof AmberLightTheme);
+        assertTrue("Amber dark theme should be loaded", AppThemeDirectory.loadAppTheme("amber_dark") instanceof AmberDarkTheme);
 
         assertTrue("Dynamic theme should be loaded", AppThemeDirectory.loadAppTheme("dynamic") instanceof DynamicTheme);
         assertTrue("Dynamic light theme should be loaded", AppThemeDirectory.loadAppTheme("dynamic_light") instanceof DynamicLightTheme);

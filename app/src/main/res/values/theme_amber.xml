@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Amber -->
+    <style name="AppThemeAmber" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/amber_bg</item>
+        <item name="android:textColor">@color/amber_fg</item>
+        <item name="andmenuAccentColor">@color/amber_accent</item>
+        <item name="andmenuBaseTextColor">@color/amber_fg</item>
+        <item name="andmenuDisabledTextColor">@color/amber_disabled</item>
+        <item name="andmenuFrameColor">@color/amber_bg</item>
+        <item name="andmenuFrameTextColor">@color/amber_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/amber_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/amber_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeAmberHome" parent="AppThemeAmber">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="AppThemeAmberDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackground">@color/amber_dark_bg</item>
+        <item name="android:textColor">@color/amber_dark_fg</item>
+        <item name="andmenuAccentColor">@color/amber_dark_accent</item>
+        <item name="andmenuBaseTextColor">@color/amber_dark_fg</item>
+        <item name="andmenuDisabledTextColor">@color/amber_dark_disabled</item>
+        <item name="andmenuFrameColor">@color/amber_dark_bg</item>
+        <item name="andmenuFrameTextColor">@color/amber_dark_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/amber_dark_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/amber_dark_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeAmberDarkHome" parent="AppThemeAmberDark">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+</resources>

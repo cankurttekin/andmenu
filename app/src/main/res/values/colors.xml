@@ -92,6 +92,24 @@
     <color name="dynamic_dark_command_bg">#1e2025</color>
     <color name="dynamic_dark_disabled">#8e9099</color>
 
+    <!-- Amber -->
+    <color name="amber_bg">#E8D8B8</color>
+    <color name="amber_fg">#49300F</color>
+    <color name="amber_accent">#B87516</color>
+    <color name="amber_frame_text">#80500F</color>
+    <color name="amber_selected">#D9B875</color>
+    <color name="amber_command_bg">#DCC69D</color>
+    <color name="amber_disabled">#947D5C</color>
+
+    <!-- Amber Dark -->
+    <color name="amber_dark_bg">#080808</color>
+    <color name="amber_dark_fg">#FFBF55</color>
+    <color name="amber_dark_accent">#FFAA33</color>
+    <color name="amber_dark_frame_text">#FFD080</color>
+    <color name="amber_dark_selected">#30200B</color>
+    <color name="amber_dark_command_bg">#14100A</color>
+    <color name="amber_dark_disabled">#A77B40</color>
+
     <!-- AMOLED -->
     <color name="amoled_bg">#000000</color>
     <color name="amoled_fg">#ffffff</color>

@@ -7,6 +7,9 @@ import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuDarkThe
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuDefaultTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AndmenuLightTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmoledTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberDarkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmberTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuDarkTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuLightTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuTheme;
@@ -42,6 +45,9 @@ public class AppThemeDirectory {
             new PastelPinkTheme(),
             new PastelPinkLightTheme(),
             new PastelPinkDarkTheme(),
+            new AmberTheme(),
+            new AmberLightTheme(),
+            new AmberDarkTheme(),
             new DynamicTheme(),
             new DynamicLightTheme(),
             new DynamicDarkTheme(),
