@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pastel Pink -->
+    <style name="AppThemePastelPink" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/pastel_pink_bg</item>
+        <item name="android:textColor">@color/pastel_pink_fg</item>
+        <item name="andmenuAccentColor">@color/pastel_pink_accent</item>
+        <item name="andmenuBaseTextColor">@color/pastel_pink_fg</item>
+        <item name="andmenuDisabledTextColor">@color/pastel_pink_disabled</item>
+        <item name="andmenuFrameColor">@color/pastel_pink_bg</item>
+        <item name="andmenuFrameTextColor">@color/pastel_pink_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/pastel_pink_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/pastel_pink_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemePastelPinkHome" parent="AppThemePastelPink">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="AppThemePastelPinkDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackground">@color/pastel_pink_dark_bg</item>
+        <item name="android:textColor">@color/pastel_pink_dark_fg</item>
+        <item name="andmenuAccentColor">@color/pastel_pink_dark_accent</item>
+        <item name="andmenuBaseTextColor">@color/pastel_pink_dark_fg</item>
+        <item name="andmenuDisabledTextColor">@color/pastel_pink_dark_disabled</item>
+        <item name="andmenuFrameColor">@color/pastel_pink_dark_bg</item>
+        <item name="andmenuFrameTextColor">@color/pastel_pink_dark_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/pastel_pink_dark_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/pastel_pink_dark_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemePastelPinkDarkHome" parent="AppThemePastelPinkDark">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+</resources>

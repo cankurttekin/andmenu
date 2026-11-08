@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dynamic (Material You) -->
+    <style name="AppThemeDynamic" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/dynamic_light_bg</item>
+        <item name="android:textColor">@color/dynamic_light_fg</item>
+        <item name="andmenuAccentColor">@color/dynamic_light_accent</item>
+        <item name="andmenuBaseTextColor">@color/dynamic_light_fg</item>
+        <item name="andmenuDisabledTextColor">@color/dynamic_light_disabled</item>
+        <item name="andmenuFrameColor">@color/dynamic_light_bg</item>
+        <item name="andmenuFrameTextColor">@color/dynamic_light_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/dynamic_light_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/dynamic_light_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeDynamicHome" parent="AppThemeDynamic">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="AppThemeDynamicDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackground">@color/dynamic_dark_bg</item>
+        <item name="android:textColor">@color/dynamic_dark_fg</item>
+        <item name="andmenuAccentColor">@color/dynamic_dark_accent</item>
+        <item name="andmenuBaseTextColor">@color/dynamic_dark_fg</item>
+        <item name="andmenuDisabledTextColor">@color/dynamic_dark_disabled</item>
+        <item name="andmenuFrameColor">@color/dynamic_dark_bg</item>
+        <item name="andmenuFrameTextColor">@color/dynamic_dark_frame_text</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/dynamic_dark_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/dynamic_dark_command_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeDynamicDarkHome" parent="AppThemeDynamicDark">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+</resources>

@@ -10,9 +10,18 @@ import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.AmoledTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuDarkTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuLightTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DmenuTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicDarkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.DynamicTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.GruvboxTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.MarineTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.OldComputerTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelDarkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelPinkDarkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelPinkLightTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelPinkTheme;
+import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.PastelTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.RosePineTheme;
 import com.cankurttekin.andmenu.applicationMain.theming.eachTheme.TransparentTheme;
 
@@ -27,6 +36,15 @@ public class AppThemeDirectory {
             new DmenuTheme(),
             new DmenuLightTheme(),
             new DmenuDarkTheme(),
+            new PastelTheme(),
+            new PastelLightTheme(),
+            new PastelDarkTheme(),
+            new PastelPinkTheme(),
+            new PastelPinkLightTheme(),
+            new PastelPinkDarkTheme(),
+            new DynamicTheme(),
+            new DynamicLightTheme(),
+            new DynamicDarkTheme(),
             new AndmenuDefaultTheme(),
             new AndmenuLightTheme(),
             new AndmenuDarkTheme(),
@@ -72,6 +90,10 @@ public class AppThemeDirectory {
 
         if (themeName == null || themeName.isEmpty() || themeName.equals("default")) {
             return THEMES[0];
+        }
+
+        if (themeName.equals("material_you") || themeName.equals("materialyou")) {
+            themeName = "dynamic";
         }
 
         AppTheme ret = themeMap.get(themeName);

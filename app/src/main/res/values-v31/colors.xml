@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dynamic Material You (Wallpaper-derived colors on Android 12+ / API 31+) -->
+    <color name="dynamic_light_bg">@android:color/system_neutral1_50</color>
+    <color name="dynamic_light_fg">@android:color/system_neutral1_900</color>
+    <color name="dynamic_light_accent">@android:color/system_accent1_600</color>
+    <color name="dynamic_light_frame_text">@android:color/system_accent1_10</color>
+    <color name="dynamic_light_selected">@android:color/system_accent1_100</color>
+    <color name="dynamic_light_command_bg">@android:color/system_neutral1_100</color>
+    <color name="dynamic_light_disabled">@android:color/system_neutral2_400</color>
+
+    <color name="dynamic_dark_bg">@android:color/system_neutral1_900</color>
+    <color name="dynamic_dark_fg">@android:color/system_neutral1_100</color>
+    <color name="dynamic_dark_accent">@android:color/system_accent1_300</color>
+    <color name="dynamic_dark_frame_text">@android:color/system_accent1_900</color>
+    <color name="dynamic_dark_selected">@android:color/system_accent1_700</color>
+    <color name="dynamic_dark_command_bg">@android:color/system_neutral1_800</color>
+    <color name="dynamic_dark_disabled">@android:color/system_neutral2_500</color>
+</resources>

@@ -33,6 +33,15 @@
     <string name="theme_name_dmenu">dmenu（ライトまたはダーク、システム設定に従う）</string>
     <string name="theme_name_dmenu_light">dmenu ライト</string>
     <string name="theme_name_dmenu_dark">dmenu ダーク</string>
+    <string name="theme_name_pastel">Pastel（ライトまたはダーク、システム設定に従う）</string>
+    <string name="theme_name_pastel_light">Pastel ライト</string>
+    <string name="theme_name_pastel_dark">Pastel ダーク</string>
+    <string name="theme_name_pastel_pink">Pastel Pink（ライトまたはダーク、システム設定に従う）</string>
+    <string name="theme_name_pastel_pink_light">Pastel Pink ライト</string>
+    <string name="theme_name_pastel_pink_dark">Pastel Pink ダーク</string>
+    <string name="theme_name_dynamic">Material You / Dynamic（ライトまたはダーク、システム設定に従う）</string>
+    <string name="theme_name_dynamic_light">Material You / Dynamic ライト</string>
+    <string name="theme_name_dynamic_dark">Material You / Dynamic ダーク</string>
 
     <!-- Widgets -->
     <string name="theme_name_amoled">AMOLED (Full Black)</string>

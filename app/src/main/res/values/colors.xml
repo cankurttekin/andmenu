@@ -38,6 +38,60 @@
     <color name="dmenu_selected">#005577</color>
     <color name="dmenu_selected_fg">#eeeeee</color>
 
+    <!-- Pastel -->
+    <color name="pastel_bg">#f5f3ee</color>
+    <color name="pastel_fg">#363945</color>
+    <color name="pastel_accent">#7ea89b</color>
+    <color name="pastel_frame_text">#232927</color>
+    <color name="pastel_selected">#dbe6e0</color>
+    <color name="pastel_command_bg">#edeae2</color>
+    <color name="pastel_disabled">#8c929d</color>
+
+    <!-- Pastel Dark -->
+    <color name="pastel_dark_bg">#282b37</color>
+    <color name="pastel_dark_fg">#dce0e8</color>
+    <color name="pastel_dark_accent">#88bfa8</color>
+    <color name="pastel_dark_frame_text">#1e2229</color>
+    <color name="pastel_dark_selected">#35423f</color>
+    <color name="pastel_dark_command_bg">#22242e</color>
+    <color name="pastel_dark_disabled">#797f91</color>
+
+    <!-- Pastel Pink -->
+    <color name="pastel_pink_bg">#FFF0F5</color>
+    <color name="pastel_pink_fg">#49313D</color>
+    <color name="pastel_pink_accent">#EFAFC5</color>
+    <color name="pastel_pink_frame_text">#49313D</color>
+    <color name="pastel_pink_selected">#F8D2E0</color>
+    <color name="pastel_pink_command_bg">#FCE4EC</color>
+    <color name="pastel_pink_disabled">#A78B98</color>
+
+    <!-- Pastel Pink Dark -->
+    <color name="pastel_pink_dark_bg">#382A35</color>
+    <color name="pastel_pink_dark_fg">#FCEAF1</color>
+    <color name="pastel_pink_dark_accent">#F0B6CC</color>
+    <color name="pastel_pink_dark_frame_text">#382A35</color>
+    <color name="pastel_pink_dark_selected">#594052</color>
+    <color name="pastel_pink_dark_command_bg">#453341</color>
+    <color name="pastel_pink_dark_disabled">#B99BAA</color>
+
+    <!-- Dynamic / Material You (Fallback for API < 31) -->
+    <color name="dynamic_light_bg">#f8f9fa</color>
+    <color name="dynamic_light_fg">#1f1f1f</color>
+    <color name="dynamic_light_accent">#00639b</color>
+    <color name="dynamic_light_frame_text">#ffffff</color>
+    <color name="dynamic_light_selected">#c2e7ff</color>
+    <color name="dynamic_light_command_bg">#e9eef6</color>
+    <color name="dynamic_light_disabled">#74777f</color>
+
+    <!-- Dynamic Dark (Fallback for API < 31) -->
+    <color name="dynamic_dark_bg">#111318</color>
+    <color name="dynamic_dark_fg">#e2e2e9</color>
+    <color name="dynamic_dark_accent">#7fcfff</color>
+    <color name="dynamic_dark_frame_text">#00344f</color>
+    <color name="dynamic_dark_selected">#004b73</color>
+    <color name="dynamic_dark_command_bg">#1e2025</color>
+    <color name="dynamic_dark_disabled">#8e9099</color>
+
     <!-- AMOLED -->
     <color name="amoled_bg">#000000</color>
     <color name="amoled_fg">#ffffff</color>

@@ -26,6 +26,15 @@
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_dmenu_dark">dmenu Dark</string>
+    <string name="theme_name_pastel">Pastel (Light or Dark, according to system setting)</string>
+    <string name="theme_name_pastel_light">Pastel Light</string>
+    <string name="theme_name_pastel_dark">Pastel Dark</string>
+    <string name="theme_name_pastel_pink">Pastel Pink (Light or Dark, according to system setting)</string>
+    <string name="theme_name_pastel_pink_light">Pastel Pink Light</string>
+    <string name="theme_name_pastel_pink_dark">Pastel Pink Dark</string>
+    <string name="theme_name_dynamic">Material You / Dynamic (Light or Dark, according to system setting)</string>
+    <string name="theme_name_dynamic_light">Material You / Dynamic Light</string>
+    <string name="theme_name_dynamic_dark">Material You / Dynamic Dark</string>
     <string name="theme_name_default">Blue Line Console (Light or Dark, according to system setting)</string>
     <string name="theme_name_light">Blue Line Console Light</string>
     <string name="theme_name_dark">Blue Line Console Dark</string>

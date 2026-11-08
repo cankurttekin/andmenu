@@ -19,14 +19,22 @@ public class DmenuTheme extends BaseTheme {
     protected void configureDarkMode() {
     }
 
+    protected int getDarkThemeStyleRes(boolean isHome) {
+        return isHome ? R.style.AppThemeDmenuDarkHome : R.style.AppThemeDmenuDark;
+    }
+
+    protected int getLightThemeStyleRes(boolean isHome) {
+        return isHome ? R.style.AppThemeDmenuHome : R.style.AppThemeDmenu;
+    }
+
     @Override
     public void apply(BaseWindowActivity activity) {
         super.apply(activity);
 
         if (this.isDarkMode(activity)) {
-            activity.setTheme(activity.isHomeActivity() ? R.style.AppThemeDmenuDarkHome : R.style.AppThemeDmenuDark);
+            activity.setTheme(this.getDarkThemeStyleRes(activity.isHomeActivity()));
         } else {
-            activity.setTheme(activity.isHomeActivity() ? R.style.AppThemeDmenuHome : R.style.AppThemeDmenu);
+            activity.setTheme(this.getLightThemeStyleRes(activity.isHomeActivity()));
         }
         activity.setContentView(R.layout.base_window_layout_dmenu);
 
