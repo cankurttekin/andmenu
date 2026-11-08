@@ -206,75 +206,83 @@ public class CalendarCommandSearcher implements CommandSearcher {
 
             TableLayout calendarTable = new TableLayout(mainActivity);
 
-            int dayOfWeekOffset = (7 - (this.calendar.get(Calendar.DAY_OF_MONTH) - (this.calendar.get(Calendar.DAY_OF_WEEK) - 1)) % 7) % 7;
+            Calendar calForFirstDay = (Calendar) this.calendar.clone();
+            calForFirstDay.set(Calendar.DAY_OF_MONTH, 1);
+
+            int firstDayOfWeek = this.calendar.getFirstDayOfWeek();
+            int startCol = (calForFirstDay.get(Calendar.DAY_OF_WEEK) - firstDayOfWeek + 7) % 7;
+
             int monthSize = getMonthSize(this.calendar.get(Calendar.YEAR), this.calendar.get(Calendar.MONTH) + 1);
             int prevMonthSize = getMonthSize(this.calendar.get(Calendar.YEAR), this.calendar.get(Calendar.MONTH));
 
-            final String[] dayOfWeekNames = new DateFormatSymbols().getShortWeekdays();
-
-            // TODO: refresh when changed
+            final String[] dayOfWeekNames = new DateFormatSymbols(locale).getShortWeekdays();
             Calendar today = Calendar.getInstance();
 
-            for (int weekOfMonth = -1; weekOfMonth * 7 - dayOfWeekOffset <= monthSize; ++weekOfMonth) {
-                if (weekOfMonth != -1 && weekOfMonth * 7 - dayOfWeekOffset <= -6) {
-                    continue;
-                }
-                TableRow weekLL = new TableRow(mainActivity);
-                weekLL.setOrientation(LinearLayout.HORIZONTAL);
+            // Header row (weekdays)
+            TableRow headerRow = new TableRow(mainActivity);
+            headerRow.setOrientation(LinearLayout.HORIZONTAL);
+            for (int col = 0; col < 7; ++col) {
+                int actualDayOfWeek = (firstDayOfWeek - 1 + col) % 7 + 1;
+                TextView dayTextView = new TextView(mainActivity);
+                dayTextView.setTypeface(Typeface.MONOSPACE);
+                dayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+                dayTextView.setTextColor(baseTextColor.data);
+                dayTextView.setText(dayOfWeekNames[actualDayOfWeek]);
+                dayTextView.setPaddingRelative((int) (8.0 * pixelsPerSp), 0, (int) (8.0 * pixelsPerSp), 0);
+                headerRow.addView(dayTextView);
+            }
+            calendarTable.addView(headerRow);
 
-                for (int dayOfWeek = 0; dayOfWeek < 7; ++dayOfWeek) {
+            // Month days grid
+            for (int row = 0; row < 6; ++row) {
+                int firstCellOfDay = row * 7 - startCol + 1;
+                if (row > 0 && firstCellOfDay > monthSize) {
+                    break;
+                }
+
+                TableRow weekRow = new TableRow(mainActivity);
+                weekRow.setOrientation(LinearLayout.HORIZONTAL);
+
+                for (int col = 0; col < 7; ++col) {
+                    int dayOfMonth = row * 7 + col - startCol + 1;
                     TextView dayTextView = new TextView(mainActivity);
                     dayTextView.setTypeface(Typeface.MONOSPACE);
-                    if (weekOfMonth == -1) {
-                        dayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-                        dayTextView.setTextColor(baseTextColor.data);
-                        dayTextView.setText(dayOfWeekNames[dayOfWeek + 1]);
 
+                    int textColor = baseTextColor.data;
+                    Calendar calOfThisDay = Calendar.getInstance();
+
+                    if (dayOfMonth >= 1 && dayOfMonth <= monthSize) {
+                        dayTextView.setText(String.format(locale, "%d", dayOfMonth));
+                        calOfThisDay.set(this.calendar.get(Calendar.YEAR), this.calendar.get(Calendar.MONTH), dayOfMonth);
+                    } else if (dayOfMonth < 1) {
+                        dayTextView.setText(String.format(locale, "%d", dayOfMonth + prevMonthSize));
+                        textColor = disabledTextColor.data;
+                        int ym = this.calendar.get(Calendar.YEAR) * 12 + this.calendar.get(Calendar.MONTH) - 1;
+                        calOfThisDay.set(ym / 12, ym % 12, dayOfMonth + prevMonthSize);
                     } else {
-                        int dayOfMonth = dayOfWeek + weekOfMonth * 7 - dayOfWeekOffset;
-                        int textColor = baseTextColor.data;
+                        dayTextView.setText(String.format(locale, "%d", dayOfMonth - monthSize));
+                        textColor = disabledTextColor.data;
+                        int ym = this.calendar.get(Calendar.YEAR) * 12 + this.calendar.get(Calendar.MONTH) + 1;
+                        calOfThisDay.set(ym / 12, ym % 12, dayOfMonth - monthSize);
+                    }
 
-                        Calendar calOfThisDay = Calendar.getInstance();
-                        calOfThisDay.set(this.calendar.get(Calendar.YEAR), this.calendar.get(Calendar.MONTH), this.calendar.get(Calendar.DAY_OF_MONTH));
+                    if (today.get(Calendar.YEAR) == calOfThisDay.get(Calendar.YEAR) &&
+                            today.get(Calendar.MONTH) == calOfThisDay.get(Calendar.MONTH) &&
+                            today.get(Calendar.DAY_OF_MONTH) == calOfThisDay.get(Calendar.DAY_OF_MONTH)) {
 
-                        if (dayOfMonth >= 1 && dayOfMonth <= monthSize) {
-                            dayTextView.setText(String.format(locale, "%d", dayOfMonth));
-                            calOfThisDay.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                        } else if (dayOfMonth < 1) {
-                            dayTextView.setText(String.format(locale, "%d", dayOfMonth + prevMonthSize));
-                            textColor = disabledTextColor.data;
-
-                            int ym = calOfThisDay.get(Calendar.YEAR) * 12 + calOfThisDay.get(Calendar.MONTH) - 1;
-                            calOfThisDay.set(ym / 12, ym % 12, dayOfMonth + prevMonthSize);
-
-                        } else {
-                            dayTextView.setText(String.format(locale, "%d", dayOfMonth - monthSize));
-                            textColor = disabledTextColor.data;
-
-                            int ym = calOfThisDay.get(Calendar.YEAR) * 12 + calOfThisDay.get(Calendar.MONTH) + 1;
-                            calOfThisDay.set(ym / 12, ym % 12, dayOfMonth - monthSize);
-                        }
-
-                        if (today.get(Calendar.YEAR) == calOfThisDay.get(Calendar.YEAR) &&
-                                today.get(Calendar.MONTH) == calOfThisDay.get(Calendar.MONTH) &&
-                                today.get(Calendar.DAY_OF_MONTH) == calOfThisDay.get(Calendar.DAY_OF_MONTH)) {
-
-                            final TypedValue backgroundColor = new TypedValue();
-                            mainActivity.getTheme().resolveAttribute(android.R.attr.windowBackground, backgroundColor, true);
-                            dayTextView.setTextColor(backgroundColor.data);
-                            dayTextView.setBackgroundColor(textColor);
-
-                        } else {
-                            dayTextView.setTextColor(textColor);
-                        }
+                        final TypedValue backgroundColor = new TypedValue();
+                        mainActivity.getTheme().resolveAttribute(android.R.attr.windowBackground, backgroundColor, true);
+                        dayTextView.setTextColor(backgroundColor.data);
+                        dayTextView.setBackgroundColor(textColor);
+                    } else {
+                        dayTextView.setTextColor(textColor);
                     }
 
                     dayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-                    dayTextView.setPaddingRelative((int)(8.0 * pixelsPerSp), 0, (int)(8.0 * pixelsPerSp), 0);
-                    weekLL.addView(dayTextView);
+                    dayTextView.setPaddingRelative((int) (8.0 * pixelsPerSp), 0, (int) (8.0 * pixelsPerSp), 0);
+                    weekRow.addView(dayTextView);
                 }
-                calendarTable.addView(weekLL);
+                calendarTable.addView(weekRow);
             }
 
             ret.addView(calendarTable);
