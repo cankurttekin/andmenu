@@ -38,6 +38,21 @@
     <color name="dmenu_selected">#005577</color>
     <color name="dmenu_selected_fg">#eeeeee</color>
 
+    <!-- dmenu Calm Pastel -->
+    <color name="dmenu_pastel_bg">#F4F1EA</color>
+    <color name="dmenu_pastel_fg">#2B2D42</color>
+    <color name="dmenu_pastel_accent">#84A59D</color>
+    <color name="dmenu_pastel_selected">#84A59D</color>
+    <color name="dmenu_pastel_selected_fg">#FFFFFF</color>
+    <color name="dmenu_pastel_frame">#E8E5DD</color>
+
+    <color name="dmenu_pastel_dark_bg">#232731</color>
+    <color name="dmenu_pastel_dark_fg">#E2E8F0</color>
+    <color name="dmenu_pastel_dark_accent">#88BFA8</color>
+    <color name="dmenu_pastel_dark_selected">#88BFA8</color>
+    <color name="dmenu_pastel_dark_selected_fg">#1E222A</color>
+    <color name="dmenu_pastel_dark_frame">#1E222A</color>
+
     <!-- Pastel -->
     <color name="pastel_bg">#f5f3ee</color>
     <color name="pastel_fg">#363945</color>

@@ -33,6 +33,7 @@
     <string name="theme_name_dmenu">dmenu（ライトまたはダーク、システム設定に従う）</string>
     <string name="theme_name_dmenu_light">dmenu ライト</string>
     <string name="theme_name_dmenu_dark">dmenu ダーク</string>
+    <string name="theme_name_dmenu_pastel">dmenu Calm Pastel</string>
     <string name="theme_name_pastel">Pastel（ライトまたはダーク、システム設定に従う）</string>
     <string name="theme_name_pastel_light">Pastel ライト</string>
     <string name="theme_name_pastel_dark">Pastel ダーク</string>
@@ -147,6 +148,7 @@
     <string name="preferences_category_dictionary">Dictionary</string>
     <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
     <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
+    <string name="preferences_item_rss_search_summary">Enable RSS feeds search</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">コマンド入力窓で、キーボード入力ソフトウェアに指示する言語を英語にする</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">コマンド入力窓で setImeHintLocales を用いて、キーボード入力ソフトウェア英語入力であると指示します。キーボード入力ソフトにより挙動が異なります。</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">コマンド入力窓で IME_FLAG_FORCE_ASCII を有効にする</string>
@@ -301,4 +303,6 @@
     <string name="preferences_item_apps_enable_category_search_title">Search apps by category</string>
     <string name="licensing_notice_header">License information</string>
     <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
+    <string name="preferences_category_rss">RSS Feeds</string>
+    <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
 </resources>

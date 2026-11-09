@@ -81,4 +81,45 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowShowWallpaper">true</item>
     </style>
+
+    <!-- dmenu Calm Pastel -->
+    <style name="AppThemeDmenuPastel" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/dmenu_pastel_bg</item>
+        <item name="android:textColor">@color/dmenu_pastel_fg</item>
+        <item name="andmenuAccentColor">@color/dmenu_pastel_accent</item>
+        <item name="andmenuBaseTextColor">@color/dmenu_pastel_fg</item>
+        <item name="andmenuFrameColor">@color/dmenu_pastel_frame</item>
+        <item name="andmenuFrameTextColor">@color/dmenu_pastel_fg</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/dmenu_pastel_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/dmenu_pastel_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeDmenuPastelHome" parent="AppThemeDmenuPastel">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="AppThemeDmenuPastelDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackground">@color/dmenu_pastel_dark_bg</item>
+        <item name="android:textColor">@color/dmenu_pastel_dark_fg</item>
+        <item name="andmenuAccentColor">@color/dmenu_pastel_dark_accent</item>
+        <item name="andmenuBaseTextColor">@color/dmenu_pastel_dark_fg</item>
+        <item name="andmenuFrameColor">@color/dmenu_pastel_dark_frame</item>
+        <item name="andmenuFrameTextColor">@color/dmenu_pastel_dark_fg</item>
+        <item name="andmenuSelectedItemBackgroundColor">@color/dmenu_pastel_dark_selected</item>
+        <item name="andmenuBackgroundColorOfCommand">@color/dmenu_pastel_dark_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppThemeDmenuPastelDarkHome" parent="AppThemeDmenuPastelDark">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
 </resources>

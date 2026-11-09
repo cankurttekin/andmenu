@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">andmenu</string>
+    <string name="app_source_code_url">https://github.com/cankurttekin/andmenu</string>
+    <string name="preferences_item_about_this_app_github_repo">GitHub\'da andmenu</string>
+    <string name="preferences_item_about_this_app_github_repo_summary">https://github.com/cankurttekin/andmenu adresine git</string>
+
+    <!-- ActivityMain -->
+    <string name="displayedFullVersionString">Sürüm %1$s</string>
+    <string name="loading_main_caption">Veritabanı yenileniyor&#8230;</string>
+    <string name="loading_detail_for_command_search">İlk başlatmada veya dil değiştirildikten sonraki ilk açılışta\nyenileme işlemi biraz zaman alabilir (bazen birkaç on saniye).</string>
+
+    <!-- Calculators -->
+    <string name="calculator_precision_format">Hesaplama Hassasiyeti: %1$s</string>
+    <string name="calculator_precision_no_error">Hata Yok</string>
+    <string name="calculator_precision_rounding">Hesaplama sırasında yuvarlama uygulandı</string>
+    <string name="calculator_error_division_by_zero">Sıfıra bölme hatası</string>
+    <string name="calculator_error_unit_conversion_failure">\"%1$s\", \"%2$s\" birimine dönüştürülemiyor</string>
+
+    <!-- Command searcher texts for results -->
+    <string name="result_search_query_on_engine_format">\"%1$s\" terimini %2$s üzerinde ara</string>
+    <string name="result_static_webpage_format">%1$s sayfasına git</string>
+    <string name="result_config_summary">andmenu Ayarları</string>
+
+    <!-- Themes -->
+    <string name="theme_name_dmenu">dmenu (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_dmenu_light">dmenu Açık</string>
+    <string name="theme_name_dmenu_dark">dmenu Koyu</string>
+    <string name="theme_name_dmenu_pastel">dmenu Sakin Pastel</string>
+    <string name="theme_name_pastel">Pastel (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_pastel_light">Pastel Açık</string>
+    <string name="theme_name_pastel_dark">Pastel Koyu</string>
+    <string name="theme_name_pastel_pink">Pastel Pembe (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_pastel_pink_light">Pastel Pembe Açık</string>
+    <string name="theme_name_pastel_pink_dark">Pastel Pembe Koyu</string>
+    <string name="theme_name_amber">Kehribar (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_amber_light">Kehribar Açık</string>
+    <string name="theme_name_amber_dark">Kehribar Koyu</string>
+    <string name="theme_name_dynamic">Material You / Dinamik (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_dynamic_light">Material You / Dinamik Açık</string>
+    <string name="theme_name_dynamic_dark">Material You / Dinamik Koyu</string>
+    <string name="theme_name_default">Blue Line Konsol (Sistem ayarına göre Açık veya Koyu)</string>
+    <string name="theme_name_light">Blue Line Konsol Açık</string>
+    <string name="theme_name_dark">Blue Line Konsol Koyu</string>
+    <string name="theme_name_marine">Marine (Deniz)</string>
+    <string name="theme_name_old_computer">Eski Bilgisayar</string>
+    <string name="theme_name_gruvbox">Gruvbox</string>
+    <string name="theme_name_rosepine">Rose Pine</string>
+    <string name="theme_name_amoled">AMOLED (Tam Siyah)</string>
+    <string name="theme_name_transparent">Şeffaf</string>
+
+    <!-- Widgets -->
+    <string name="widget_launcher_label">andmenu kısayolu</string>
+
+    <!-- String match strategies -->
+    <string name="string_match_strategy_substring">Normal (Alt dize)</string>
+    <string name="string_match_strategy_skipped_substring">Atlamalı alt dize (ör. \"abcdef\" için \"abd\")</string>
+    <string name="string_match_strategy_fuzzy">Bulanık (Fuzzy) eşleşme</string>
+
+    <!-- Notification for OS -->
+    <string name="notification_launch_this_app">andmenu uygulamasını başlat</string>
+    <string name="notification_channel_always_show">andmenu\'yu her yerden hızlıca başlatmak için bildirim simgesi</string>
+
+    <!-- Preferences general buttons -->
+    <string name="button_add">Ekle</string>
+    <string name="button_update">Güncelle</string>
+    <string name="button_delete">Sil</string>
+    <string name="button_close">Kapat</string>
+    <string name="button_ok">Tamam</string>
+    <string name="button_cancel">İptal</string>
+    <string name="button_increment_minimal">+</string>
+    <string name="button_decrement_minimal">-</string>
+
+    <!-- Colors -->
+    <string name="rgb_color_red">Kırmızı</string>
+    <string name="rgb_color_green">Yeşil</string>
+    <string name="rgb_color_blue">Mavi</string>
+    <string name="rgb_color_display">RGB (Kırmızı:%1$d, Yeşil:%2$d, Mavi:%3$d)</string>
+
+    <!-- Preferences general notes -->
+    <string name="note_take_effect_after_restart">Bu ayar andmenu yeniden başlatıldıktan sonra etkinleşir.</string>
+
+    <!-- Preferences, titles for headers and footers -->
+    <string name="preferences_title_for_header_and_footer">Ayarlar</string>
+    <string name="preferences_title_for_header_and_footer_url">URL</string>
+    <string name="preferences_title_for_header_and_footer_add_custom_urls">URL Ekle</string>
+    <string name="preferences_title_for_header_and_footer_edit_custom_urls">URL Düzenle</string>
+    <string name="preferences_title_for_header_and_footer_widget_commands">Widget Komutları</string>
+    <string name="preferences_title_for_header_and_footer_accent_color">Vurgu Rengi</string>
+    <string name="preferences_title_for_header_home_screen_default_items">Ana Ekran</string>
+    <string name="preferences_title_for_footer_home_screen_default_items">Varsayılan Ögeler</string>
+    <string name="preferences_title_for_header_and_footer_home_screen_add_widget">Widget Ekle</string>
+    <string name="preferences_title_for_header_and_footer_widget">Widget</string>
+    <string name="preferences_title_for_header_and_footer_license">Lisans</string>
+
+    <!-- Preferences categories, main screen -->
+    <string name="preferences_category_main">Genel</string>
+    <string name="preferences_category_appearance">Görünüm</string>
+    <string name="preferences_category_apps">Uygulama Başlatma</string>
+    <string name="preferences_category_search_commands">Arama Komutları</string>
+    <string name="preferences_category_urls">Web Sayfaları ve Aramalar</string>
+    <string name="preferences_category_custom_commands">Özel Komutlar</string>
+    <string name="preferences_category_home_screen">Ana Ekran</string>
+    <string name="preferences_category_contacts">Kişiler</string>
+    <string name="preferences_category_music">Müzik</string>
+    <string name="preferences_category_advanced">Gelişmiş</string>
+    <string name="preferences_category_about_this_app">Hakkında</string>
+
+    <!-- Preferences items, main screen -->
+    <string name="preferences_item_main_show_startup_help_title">Başlangıçta yardımı göster</string>
+    <string name="preferences_item_main_show_startup_help_summary">Bu seçenek yardım komutunun kullanımını gösterir. "help" komutunu öğrendikten sonra kapatabilirsiniz.</string>
+    <string name="preferences_item_default_assist_app_title">Varsayılan asistan uygulaması olarak ayarla</string>
+    <string name="preferences_item_default_assist_app_summary">Ana ekran düğmesine uzun basarak her yerden andmenu\'yu açmak için varsayılan asistan olarak ayarlayın.</string>
+    <string name="preferences_item_default_home_app_title">Varsayılan ana ekran uygulaması yap</string>
+    <string name="preferences_item_default_home_app_summary">andmenu\'yu ana ekran başlatıcınız yapmak için varsayılan ana ekran uygulaması olarak ayarlayın.</string>
+    <string name="preferences_item_main_always_show_notification_title">Her zaman bildirim simgesini göster</string>
+    <string name="preferences_item_main_always_show_notification_summary">andmenu\'yu her yerden başlatabilmek için bildirim simgesini sabit tutar.</string>
+    <string name="preferences_item_main_run_mode_title">Çalıştırma modu</string>
+    <string name="preferences_item_main_run_mode_summary">Komut satırından WiFi, Bluetooth vb. sistem ayarlarına (sys) hızlı erişim.</string>
+    <string name="preferences_item_text_match_strategy_title">Metin arama eşleşme stili</string>
+    <string name="preferences_item_appearance_theme_title">Tema</string>
+    <string name="preferences_item_appearance_show_header_title">Başlık metnini göster</string>
+    <string name="preferences_item_appearance_header_text_title">Başlık metni</string>
+    <string name="preferences_item_appearance_placeholder_text_title">Girdi yer tutucu metni</string>
+    <string name="preferences_item_appearance_theme_summary">Bu seçenek değiştirildiğinde andmenu hemen yeniden başlatılır.</string>
+    <string name="preferences_item_appearance_accent_color">Vurgu rengi</string>
+    <string name="preferences_item_appearance_animation_title">Animasyon</string>
+    <string name="preferences_item_appearance_show_icons_title">Simgeleri göster</string>
+    <string name="preferences_item_apps_show_package_name_title">Paket adını göster</string>
+    <string name="preferences_item_apps_show_package_name_summary">Not: Bu kapalı olsa bile uygulamaları paket adının bir kısmını yazarak bulabilirsiniz.</string>
+    <string name="preferences_item_apps_sort_by_usage_title">Kullanım sıklığına göre sırala</string>
+    <string name="preferences_item_apps_sort_by_usage_summary">Sık kullanılan uygulamaları arama sonuçlarının en üstünde gösterir.</string>
+    <string name="preferences_item_apps_enable_category_search_title">Uygulamaları kategoriye göre ara</string>
+    <string name="preferences_item_apps_enable_category_search_summary">Android kategorilerini (ör. oyunlar, sosyal, verimlilik vb.) yazarak uygulamaları bulun.</string>
+    <string name="preferences_item_display_custom_urls_title">Web sayfaları ve aramalar</string>
+    <string name="preferences_item_default_search_title">Varsayılan Arama Motoru</string>
+    <string name="preferences_item_default_search_summary">Listenin en altında her zaman belirli bir arama motorunu göster</string>
+    <string name="preferences_item_default_search_option_none">(Yok)</string>
+    <string name="preferences_item_custom_commands_widgets">Widget komutları</string>
+    <string name="preferences_item_home_screen_default_items">Ana ekran ögeleri</string>
+    <string name="preferences_item_home_set_solid_color_wallpaper_title">Düz rengi duvar kağıdı yap</string>
+    <string name="preferences_item_home_set_wallpaper_title">Duvar kağıdı ayarla</string>
+    <string name="preferences_item_home_hide_status_bar_title">Durum çubuğunu gizle</string>
+    <string name="preferences_item_home_hide_status_bar_summary">andmenu ana ekran olarak kullanıldığında durum çubuğunu gizler.</string>
+    <string name="preferences_item_home_screen_default_items_summary">andmenu ana ekran olarak ayarlandığında, hiçbir şey yazılmadığında gösterilecek ögeler ve widget\'lar.</string>
+    <string name="preferences_item_contacts_enable_search">Kişiler aramasını etkinleştir</string>
+    <string name="preferences_item_contacts_search_permission_explanation">Kişiler aramasını etkinleştirmek için Rehber okuma izni gereklidir.</string>
+    <string name="preferences_item_music_enable_search">Müzik aramasını etkinleştir</string>
+    <string name="preferences_item_music_search_permission_explanation">Müzik aramasını etkinleştirmek için ses dosyalarını okuma izni gereklidir.</string>
+
+    <string name="preferences_category_bookmarks">Yer İmleri</string>
+    <string name="preferences_item_bookmark_enable_search">Yer imleri aramasını etkinleştir</string>
+    <string name="preferences_item_bookmark_search_summary">\'b \' komutu ile kayıtlı yer imlerini aramayı ve yönetmeyi etkinleştirir</string>
+
+    <string name="preferences_category_notes">Notlar ve Yapılacaklar</string>
+    <string name="preferences_item_note_enable_search">Notlar ve yapılacaklar aramasını etkinleştir</string>
+    <string name="preferences_item_note_search_summary">\'n \' komutu ile notları ve yapılacakları aramayı ve yönetmeyi etkinleştirir</string>
+
+    <string name="preferences_category_devtools">Geliştirici Araçları</string>
+    <string name="preferences_item_devtools_enable_search">Geliştirici ve güvenlik araçlarını etkinleştir</string>
+    <string name="preferences_item_devtools_search_summary">Parolalar, Base64, UUID ve hash araçlarını etkinleştirir</string>
+
+    <string name="preferences_category_dictionary">Sözlük</string>
+    <string name="preferences_item_dictionary_enable_search">Sözlük tanımlarını etkinleştir</string>
+    <string name="preferences_item_dictionary_search_summary">\'define &lt;kelime&gt;\' ile kelime anlamlarını görmeyi etkinleştirir</string>
+
+    <string name="preferences_category_rss">RSS Beslemeleri</string>
+    <string name="preferences_item_rss_enable_search">RSS beslemeleri aramasını etkinleştir</string>
+    <string name="preferences_item_rss_search_summary">\'rss \' komutu ile RSS beslemelerini okumayı ve yönetmeyi etkinleştirir</string>
+
+    <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Komut penceresinde klavyeye İngilizce girdi bildiriminde bulun</string>
+    <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Komut girdi penceresi setImeHintLocales kullanarak İngilizce dil ayarını bildirir.</string>
+    <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Komut girdi penceresinde IME_FLAG_FORCE_ASCII bayrağını ayarla</string>
+    <string name="preferences_item_advanced_main_edittext_flagforceascii_summary">IME_FLAG_FORCE_ASCII, girdi için ASCII karakterlerin kullanılmasını hedefler.</string>
+    <string name="preferences_item_advanced_text_config_title">Gelişmiş Metin Yapılandırması</string>
+    <string name="preferences_item_advanced_text_config_summary">Tüm uygulama ayarlarını JSON olarak düzenleyin, dışa aktarın veya içe aktarın.</string>
+    <string name="preferences_item_advanced_export_config_title">Yapılandırmayı Dışa Aktar</string>
+    <string name="preferences_item_advanced_import_config_title">Yapılandırmayı İçe Aktar</string>
+    <string name="preferences_item_accept_arbitrary_url">Her türlü URL şemasını kabul et</string>
+    <string name="preferences_item_accept_arbitrary_url_summary">Varsayılan olarak andmenu yalnızca http:// ve https:// ile başlayan bağlantıları kabul eder. Etkinleştirildiğinde diğer şemalar da kabul edilir.</string>
+    <string name="preferences_item_about_this_app_licensing_information">Lisans bilgileri</string>
+
+    <!-- Preferences items, URL screens -->
+    <string name="preferences_url_add_button">Özel URL veya arama motoru ekle</string>
+    <string name="preferences_url_column_command_name">Komut adı</string>
+    <string name="preferences_url_column_display_name">Görünen ad</string>
+    <string name="preferences_url_column_url">URL</string>
+    <string name="preferences_url_column_has_query">Arama motoru (etkinleştirildiğinde sorgu sona eklenir)</string>
+    <string name="preferences_url_property_enabled">Etkin</string>
+    <string name="preferences_url_property_disabled">Devre Dışı</string>
+    <string name="preferences_url_property_preset">Ön Tanımlı</string>
+    <string name="preferences_url_varies_with_locale">Cihaz dil ayarına göre değişir</string>
+
+    <!-- Preferences items, accent color screens -->
+    <string name="preferences_accent_color_theme_default">Tema varsayılanı</string>
+    <string name="preferences_accent_color_custom">Rengi özelleştir</string>
+    <string name="preferences_accent_color_theme_without_accent_color">Mevcut tema (%1$s) vurgu rengi değiştirmeyi desteklemiyor.</string>
+
+    <!-- Preferences item, home screen default items screens -->
+    <string name="preferences_home_screen_add_command_button">Komut ekle</string>
+    <string name="preferences_home_screen_add_widget_button">Widget ekle</string>
+    <string name="preferences_home_screen_add_widget_select_message">Eklenecek widget\'ı seçin:</string>
+    <string name="preferences_home_screen_widget_label">Widget</string>
+    <string name="preferences_home_screen_command_label">Komut</string>
+
+    <!-- Preferences item, widgets related messages -->
+    <string name="preferences_widget_height_px">Yükseklik (px)</string>
+    <string name="preferences_widget_minimum_height_show">Minimum Yükseklik: %1$d px</string>
+    <string name="preferences_widget_default_height_show">Varsayılan Yükseklik: %1$d px</string>
+    <string name="preferences_widget_configure_the_widget">Widget\'ı yapılandır</string>
+
+    <!-- Preferences item, widget commands related messages -->
+    <string name="preferences_command_widget_command_add">Widget komutu ekle</string>
+    <string name="preferences_command_widget_command_new_label">Yeni widget komutu</string>
+    <string name="preferences_command_widget_command_save_and_select_widget">Widget\'ı kaydet ve seç</string>
+    <string name="preferences_command_widget_command_command">Komut adı</string>
+    <string name="preferences_command_widget_command_abbreviation">Komut adı kısaltılabilir</string>
+    <string name="preferences_command_widget_command_abbreviable_label">Kısaltılabilir</string>
+
+    <!-- Contact search -->
+    <string name="contacts_action_dial_phone_number">Ara: %1$s</string>
+    <string name="contacts_action_add_contact">Kişilere ekle: %1$s</string>
+    <string name="contacts_action_email">E-posta: %1$s</string>
+
+    <!-- factor command -->
+    <string name="factor_error_not_valid_integer">geçerli bir tamsayı değil</string>
+    <string name="factor_error_not_positive_number">pozitif bir sayı değil</string>
+    <string name="factor_error_factor_too_large">%1$s sayısından büyük çarpan içeriyor</string>
+
+    <!-- weather command -->
+    <string name="weather_loading">%1$s için hava durumu yükleniyor…</string>
+    <string name="weather_error">Hava durumu alınamadı</string>
+
+    <!-- Application long-press menu -->
+    <string name="menu_item_app_info">Uygulama Bilgisi</string>
+    <string name="menu_item_rename">Yeniden Adlandır</string>
+    <string name="menu_item_hide">Gizle</string>
+    <string name="menu_item_unhide">Gizlemeyi Kaldır</string>
+    <string name="menu_item_uninstall">Kaldır</string>
+    <string name="menu_item_pin">Ana ekrana sabitle</string>
+    <string name="menu_item_unpin">Ana ekrandan sabitlemeyi kaldır</string>
+    <string name="toast_pinned_to_home">%1$s ana ekrana sabitlendi</string>
+    <string name="toast_unpinned_from_home">%1$s ana ekrandan kaldırıldı</string>
+    <string name="dialog_title_rename_format">%1$s Uygulamasını Yeniden Adlandır</string>
+
+    <!-- Error messages, user errors -->
+    <string name="error_invalid_url_least_validation_for_web">Geçersiz URL: https:// veya http:// ve en az bir tane daha taksim (\"/\") ile başlamalıdır.</string>
+    <string name="error_invalid_url_least_validation_for_web_arbitrary_schema">Geçersiz URL: &lt;şema&gt;:// ve en az bir tane daha taksim (\"/\") ile başlamalıdır.</string>
+    <string name="error_invalid_command_name">Geçersiz ad: komut boşluk içeremez ve boş olamaz</string>
+    <string name="error_empty_display_name">Görünen ad boş</string>
+
+    <!-- Error messages, system errors -->
+    <string name="error_failure_could_not_start_command">HATA: komut başlatılamadı</string>
+    <string name="error_failure_could_not_open_url">HATA: URL açılamadı</string>
+    <string name="error_failure_not_found_opening_application_with_class">\"%1$s\" başlatılabilir bir paket değil.</string>
+    <string name="error_failure_could_not_connect_to_the_widget">HATA: widget\'a bağlanılamadı</string>
+
+    <!-- Error messages, app internal errors -->
+    <string name="error_calculator_internal_error">Bilinmeyen hesap makinesi iç hatası</string>
+
+    <!-- Startup Help Activity -->
+    <string name="startup_help_title_for_header_and_footer">Bildirim</string>
+    <string name="startup_help_title">Yardım komutu hakkında</string>
+    <string name="startup_help_body_part1">Kullanımı görmek için</string>
+    <string name="startup_help_body_part2">help</string>
+    <string name="startup_help_body_part3">yazın.</string>
+    <string name="startup_help_check_never_later">Bu mesajı bir daha gösterme</string>
+
+    <!-- Migration message -->
+    <string name="migration_lost_happened_message">
+        Veriler andmenu dışından geri yüklenmiş görünüyor.
+        \n
+        \nWidget\'lar aktarılamadı ve kayboldu. Gerekirse ayarlar menüsünden widget ayarlarını yeniden yapılandırın.
+    </string>
+
+    <!-- Help -->
+    <string name="app_help_text">
+        Android uygulama başlatıcısı ve komut menüsü
+
+        \n
+        \nKULLANIM
+        \n-&#032;Uygulamaları, komutları veya desteklenen diğer içerikleri aramak için bir sorgu girin.
+        \n
+        \nARAMA
+        \n-&#032;Uygulama adının bir kısmı
+        \n-&#032;Paket adının bir kısmı
+        \n-&#032;URL
+        \n-&#032;Telefon numarası
+        \n-&#032;E-posta adresi
+        \n-&#032;m &lt;sorgu&gt; - Müzik
+        \n-&#032;c &lt;sorgu&gt; - Kişiler
+        \n-&#032;b &lt;sorgu&gt; - Yer İmleri
+        \n-&#032;n &lt;sorgu&gt; - Notlar ve Yapılacaklar
+        \n-&#032;rss &lt;sorgu&gt; - RSS besleme okuyucu
+        \n-&#032;ip&#032;- Yerel ağ IP ve MAC adresi
+        \n-&#032;dns &lt;alan_adı&gt; - DNS sorgulama
+        \n-&#032;ping &lt;sunucu&gt; - Sunucuya ping atma
+        \n-&#032;gen pass &lt;uzunluk&gt; - Parola oluşturucu
+        \n-&#032;b64enc / b64dec - Base64 kodlayıcı/çözücü
+        \n-&#032;uuid - Rastgele UUIDv4 oluşturucu
+        \n-&#032;hash &lt;metin&gt; - MD5 / SHA256 özetleri
+        \n-&#032;define &lt;kelime&gt; - Sözlük anlamları
+        \n-&#032;Hesaplama formülü
+        \n
+        \nÖRNEKLER
+        \n-&#032;m joy division
+        \n-&#032;c alan turing
+        \n-&#032;b github
+        \n-&#032;n market alışverişi
+        \n-&#032;define ubiquitous
+        \n-&#032;ip&#032;
+        \n-&#032;gen pass 20
+        \n-&#032;b64enc merhaba
+        \n-&#032;uuid
+        \n-&#032;hash metin
+        \n-&#032;ornek@ornek.com
+        \n-&#032;(8+6)*3
+        \n-&#032;1inch in cm
+        \n-&#032;1m+1inch in cm
+        \n-&#032;https://example.com/
+        \n-&#032;+1234567890
+        \n
+        \nKOMUTLAR
+        \n-&#032;help
+        \n-&#032;config
+        \n-&#032;date
+        \n-&#032;all_apps
+        \n-&#032;hidden_apps
+        \n-&#032;cal [&lt;ay&gt; &lt;yıl&gt;]
+        \n-&#032;factor &lt;sayı&gt; ...
+        \n-&#032;sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;
+        \n
+        \nWEB ARAMA
+        \n-&#032;bing &lt;sorgu&gt;
+        \n-&#032;d &lt;sorgu&gt;
+        \n-&#032;google &lt;sorgu&gt;
+        \n-&#032;wikipedia &lt;sorgu&gt;
+        \n-&#032;yahoo &lt;sorgu&gt;
+        \n-&#032;ecosia &lt;sorgu&gt;
+        \n-&#032;maps &lt;sorgu&gt;
+        \n-&#032;yt &lt;sorgu&gt;
+        \n-&#032;ytm &lt;sorgu&gt;
+        \n-&#032;weather &lt;şehir&gt;
+        \n
+        \nArama motoru isimleri kısaltılabilir.
+        \n-&#032;Örnek: d sorgu = duckduckgo sorgu
+        \n
+        \nAĞ
+        \n-&#032;ping &lt;sunucu&gt;
+        \n-&#032;ping6 &lt;sunucu&gt;
+        \n-&#032;Yalnızca ilgili komuta sahip sistemlerde kullanılabilir.
+        \n
+        \nDİĞER
+        \n-&#032;Renk kodu (ör. #4d68ff)
+        \n
+        \nANDROİD ENTEGRASYONU
+        \n-&#032;andmenu\'yu Varsayılan Asistan Uygulaması olarak ayarlayın:
+        \n-&#032;Ayarlar &gt; Uygulamalar &gt; Varsayılan Uygulamalar &gt; Asistan uygulaması
+        \n-&#032;veya cihazınızdaki eşdeğer menüden.
+        \n
+        \n-&#032;andmenu ayrıca bildirim çubuğundan da başlatılabilir.
+        \n-&#032;Kalıcı bildirimi config komutundan etkinleştirin.
+        \n
+        \nİPUCU
+        \n-&#032;Bu yardımı görmek için istediğiniz zaman help yazabilirsiniz.
+    </string>
+
+    <!-- Licensing information -->
+    <string name="licensing_notice_header">Lisans bilgileri</string>
+
+    <!-- Legal English texts -->
+    <string name="license_apache_license_v2.0_name">Apache Lisansı, Sürüm 2.0</string>
+</resources>

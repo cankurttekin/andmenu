@@ -127,6 +127,7 @@
     <string name="preferences_category_dictionary">Dictionary</string>
     <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
     <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
+    <string name="preferences_item_rss_search_summary">Enable RSS feeds search</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">명령어 입력창의 언어를 영어로 IME에 지시</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">명령어 입력창에 setImeHintLocales 를 통해 영어 입력으로 지시합니다. IME에 따라 동작이 다릅니다.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">명령어 입력창의 IME_FLAG_FORCE_ASCII 를 활성화</string>
@@ -265,6 +266,7 @@
     <string name="button_ok">OK</string>
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
+    <string name="theme_name_dmenu_pastel">dmenu Calm Pastel</string>
     <string name="theme_name_pastel">Pastel (Light or Dark, according to system setting)</string>
     <string name="theme_name_pastel_light">Pastel Light</string>
     <string name="theme_name_pastel_dark">Pastel Dark</string>
@@ -298,4 +300,6 @@
     <string name="preferences_item_apps_enable_category_search_title">Search apps by category</string>
     <string name="licensing_notice_header">License information</string>
     <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
+    <string name="preferences_category_rss">RSS Feeds</string>
+    <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
 </resources>

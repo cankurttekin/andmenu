@@ -1,31 +1,39 @@
-andmenu is a lightweight, keyboard-centric launcher designed for blazing fast speed and efficiency. 
-Inspired by tools like `dmenu` and `rofi`, andmenu lets you launch apps, search the web, calculate formulas, and run quick commands.
+<b>andmenu</b> is a lightweight, keyboard-centric launcher designed for blazing fast speed and efficiency.
+Inspired by tools like <i>dmenu</i> and <i>rofi</i>, andmenu lets you launch apps, search the web, calculate formulas, and run quick commands.
 
-Blazing-Fast App Search: Type 2 or 3 characters to find and launch any app instantly.
-Fuzzy Search: Don't worry about exact spelling—find apps quickly even with typos or partial names.
-Usage Frequency Sorting: Your most-used applications automatically rise to the top for faster access.
-App Shortcuts & Management: Long-press any app to access system app info, uninstall, hide apps from the list, or rename them.
-Custom Themes: Style your launcher to fit your aesthetic with themes like dmenu, Gruvbox, Rosé Pine and more.
+<p><b>Features:</b></p>
+<ul>
+  <li><b>Blazing-Fast App Search:</b> Type 2 or 3 characters to find and launch any app instantly.</li>
+  <li><b>Fuzzy Search:</b> Find apps quickly even with typos or partial names.</li>
+  <li><b>Usage Frequency Sorting:</b> Your most-used applications automatically rise to the top for faster access.</li>
+  <li><b>App Shortcuts &amp; Management:</b> Long-press any app to access system app info, uninstall, hide apps, or rename them.</li>
+  <li><b>Custom Themes:</b> Style your launcher with themes like dmenu, Gruvbox, Rosé Pine, Soft Pastel, and more.</li>
+  <li><b>Developer &amp; Security Tools:</b> Password generator, Base64 encoder/decoder, UUID generator, and MD5/SHA256 hashes.</li>
+  <li><b>Network Utilities:</b> Check local IP, Wi-Fi SSID, MAC addresses, DNS lookup, and ping.</li>
+  <li><b>Bookmarks &amp; Notes:</b> Quickly manage and search bookmarks, notes, and to-do lists.</li>
+  <li><b>RSS Feed Reader:</b> Read and follow your favorite RSS feeds directly in the launcher.</li>
+  <li><b>Dictionary:</b> Look up word definitions instantly with <code>define</code>.</li>
+</ul>
 
+<p><b>Available Commands:</b></p>
+<ul>
+  <li><code>help</code></li>
+  <li><code>config</code></li>
+  <li><code>date</code></li>
+  <li><code>b &lt;query&gt;</code> (Bookmarks)</li>
+  <li><code>n &lt;query&gt;</code> (Notes &amp; To-Do)</li>
+  <li><code>rss &lt;query&gt;</code> (RSS Feeds)</li>
+  <li><code>define &lt;word&gt;</code> (Dictionary)</li>
+  <li><code>ip</code> (Local IP, Wi-Fi SSID, MAC)</li>
+  <li><code>dns &lt;domain&gt;</code> (DNS Lookup)</li>
+  <li><code>ping &lt;host&gt;</code> / <code>ping6 &lt;host&gt;</code></li>
+  <li><code>gen pass &lt;length&gt;</code> (Password Generator)</li>
+  <li><code>b64enc</code> / <code>b64dec</code> (Base64)</li>
+  <li><code>uuid</code> (UUID Generator)</li>
+  <li><code>hash &lt;text&gt;</code> (MD5 / SHA256)</li>
+  <li><code>sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;</code></li>
+  <li><code>google</code>, <code>d</code>, <code>bing</code>, <code>wikipedia</code>, <code>maps</code>, <code>yt</code>, <code>ytm</code>, <code>weather</code></li>
+</ul>
 
-Commands:
-
-- help
-- config
-- date
-- ping HOST
-- ping6 HOST
-- all_apps
-- hidden_apps
-- sys [wifi, bluetooth, mobile_data, location, airplane_mode]
-- bing QUERY    (Bing search)
-- d QUERY       (DuckDuckGo)
-- google QUERY  (Google)
-- ecosia QUERY  (Ecosia)
-- maps QUERY    (Google Maps)
-- ytm QUERY     (YouTube Music)
-- yt QUERY      (YouTube)
-- wikipedia QUERY
-- yahoo QUERY
-
-Source Code: https://github.com/cankurttekin/andmenu
+<p><b>Source Code:</b><br>
+<a href="https://github.com/cankurttekin/andmenu">https://github.com/cankurttekin/andmenu</a></p>

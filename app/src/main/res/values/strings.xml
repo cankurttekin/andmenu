@@ -26,6 +26,7 @@
     <string name="theme_name_dmenu">dmenu (Light or Dark, according to system setting)</string>
     <string name="theme_name_dmenu_light">dmenu Light</string>
     <string name="theme_name_dmenu_dark">dmenu Dark</string>
+    <string name="theme_name_dmenu_pastel">dmenu Calm Pastel</string>
     <string name="theme_name_pastel">Pastel (Light or Dark, according to system setting)</string>
     <string name="theme_name_pastel_light">Pastel Light</string>
     <string name="theme_name_pastel_dark">Pastel Dark</string>
@@ -162,6 +163,9 @@
     <string name="preferences_category_dictionary">Dictionary</string>
     <string name="preferences_item_dictionary_enable_search">Enable dictionary definitions</string>
     <string name="preferences_item_dictionary_search_summary">Enable word definitions with \'define &lt;word&gt;\'</string>
+
+    <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
+    <string name="preferences_item_rss_search_summary">Enable reading and managing RSS feeds with \'rss \'</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_title">Notify English input to keyboard input software on command input window</string>
     <string name="preferences_item_advanced_main_edittext_hint_locale_english_summary">Command input window uses setImeHintLocales and sets to English locale. Behavior differs between keyboard input softwares.</string>
     <string name="preferences_item_advanced_main_edittext_flagforceascii_title">Set IME_FLAG_FORCE_ASCII flag on command input window</string>
@@ -376,4 +380,5 @@
 
     <!-- Legal English texts -->
     <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
+    <string name="preferences_category_rss">RSS Feeds</string>
 </resources>

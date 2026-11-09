@@ -1,32 +1,39 @@
-andmenu, yıldırım hızında kullanım ve verimlilik için tasarlanmış hafif ve klavye odaklı bir başlatıcıdır. dmenu ve rofi gibi araçlardan esinlenen andmenu; uygulamaları başlatmanıza, web'de arama yapmanıza, hesaplamalar yapmanıza ve hızlı komutlar çalıştırmanıza olanak tanır.
+<b>andmenu</b>, yıldırım hızında kullanım ve verimlilik için tasarlanmış hafif ve klavye odaklı bir başlatıcıdır.
+<i>dmenu</i> ve <i>rofi</i> gibi araçlardan esinlenen andmenu; uygulamaları başlatmanıza, web'de arama yapmanıza, hesaplamalar yapmanıza ve hızlı komutlar çalıştırmanıza olanak tanır.
 
-Yıldırım Hızında Uygulama Arama: İstediğiniz uygulamayı anında bulup başlatmak için 2 veya 3 harf yazmanız yeterli.
+<p><b>Özellikler:</b></p>
+<ul>
+  <li><b>Yıldırım Hızında Uygulama Arama:</b> İstediğiniz uygulamayı anında bulup başlatmak için 2 veya 3 harf yazmanız yeterli.</li>
+  <li><b>Bulanık Arama (Fuzzy Search):</b> Tam yazılışı dert etmeyin; yazım hataları veya kısmi isimlerle bile uygulamaları kolayca bulun.</li>
+  <li><b>Kullanım Sıklığına Göre Sıralama:</b> En çok kullandığınız uygulamalar daha hızlı erişim için otomatik olarak listenin üstüne taşınır.</li>
+  <li><b>Uygulama Kısayolları ve Yönetimi:</b> Uygulama bilgilerine erişmek, kaldırmak, gizlemek veya yeniden adlandırmak için herhangi bir uygulamaya uzun basın.</li>
+  <li><b>Özel Temalar:</b> dmenu, Gruvbox, Rosé Pine, Sakin Pastel ve daha fazla tema seçeneğiyle tarzınızı yansıtın.</li>
+  <li><b>Geliştirici ve Güvenlik Araçları:</b> Parola oluşturucu, Base64 kodlayıcı/çözücü, UUID oluşturucu ve MD5/SHA256 özetleri.</li>
+  <li><b>Ağ Araçları:</b> Yerel IP, Wi-Fi SSID, MAC adresleri, DNS sorgulama ve ping.</li>
+  <li><b>Yer İmleri ve Notlar:</b> Yer imlerini, notları ve yapılacaklar listesini hızla yönetin.</li>
+  <li><b>RSS Okuyucu:</b> Favori RSS beslemelerinizi doğrudan başlatıcı üzerinden okuyun.</li>
+  <li><b>Sözlük:</b> <code>define</code> komutuyla kelime anlamlarına anında ulaşın.</li>
+</ul>
 
-Bulanık Arama (Fuzzy Search): Tam yazılışı dert etmeyin; yazım hataları veya kısmi isimlerle bile uygulamaları kolayca bulun.
+<p><b>Kullanılabilir Komutlar:</b></p>
+<ul>
+  <li><code>help</code></li>
+  <li><code>config</code></li>
+  <li><code>date</code></li>
+  <li><code>b &lt;sorgu&gt;</code> (Yer İmleri)</li>
+  <li><code>n &lt;sorgu&gt;</code> (Notlar ve Yapılacaklar)</li>
+  <li><code>rss &lt;sorgu&gt;</code> (RSS Beslemeleri)</li>
+  <li><code>define &lt;kelime&gt;</code> (Sözlük)</li>
+  <li><code>ip</code> (Yerel IP, Wi-Fi SSID, MAC)</li>
+  <li><code>dns &lt;alan_adı&gt;</code> (DNS Sorgulama)</li>
+  <li><code>ping &lt;sunucu&gt;</code> / <code>ping6 &lt;sunucu&gt;</code></li>
+  <li><code>gen pass &lt;uzunluk&gt;</code> (Parola Oluşturucu)</li>
+  <li><code>b64enc</code> / <code>b64dec</code> (Base64)</li>
+  <li><code>uuid</code> (UUID Oluşturucu)</li>
+  <li><code>hash &lt;metin&gt;</code> (MD5 / SHA256)</li>
+  <li><code>sys &lt;wifi|bluetooth|mobile_data|location|airplane_mode&gt;</code></li>
+  <li><code>google</code>, <code>d</code>, <code>bing</code>, <code>wikipedia</code>, <code>maps</code>, <code>yt</code>, <code>ytm</code>, <code>weather</code></li>
+</ul>
 
-Kullanım Sıklığına Göre Sıralama: En çok kullandığınız uygulamalar daha hızlı erişim için otomatik olarak listenin üstüne taşınır.
-
-Uygulama Kısayolları ve Yönetimi: Sistem uygulama bilgilerine erişmek, kaldırmak, listeden gizlemek veya yeniden adlandırmak için herhangi bir uygulamaya uzun basın.
-
-Özel Temalar: Başlatıcınızı dmenu, Gruvbox, Rosé Pine ve daha fazla tema seçeneğiyle tarzınıza göre özelleştirin.
-
-Komutlar:
-
-    help
-    config
-    date
-    ping SUNUCU
-    ping6 SUNUCU
-    all_apps
-    hidden_apps
-    bing SORGU (Bing araması)
-    d SORGU (DuckDuckGo)
-    google SORGU (Google)
-    ecosia SORGU (Ecosia)
-    maps SORGU (Google Haritalar)
-    ytm SORGU (YouTube Music)
-    yt SORGU (YouTube)
-    wikipedia SORGU
-    yahoo SORGU
-
-Source Code: https://github.com/cankurttekin/andmenu
+<p><b>Kaynak Kodu:</b><br>
+<a href="https://github.com/cankurttekin/andmenu">https://github.com/cankurttekin/andmenu</a></p>
