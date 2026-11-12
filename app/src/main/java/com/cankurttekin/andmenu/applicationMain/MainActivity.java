@@ -360,6 +360,16 @@ public class MainActivity extends BaseWindowActivity {
     }
 
     public void executeSearch(String query) {
+        if (query != null) {
+            int i = 0;
+            while (i < query.length() && Character.isWhitespace(query.charAt(i))) {
+                i++;
+            }
+            query = query.substring(i);
+        } else {
+            query = "";
+        }
+
         List<CandidateEntry> primaryCandidates = new ArrayList<>();
 
         if (! query.isEmpty()) {
