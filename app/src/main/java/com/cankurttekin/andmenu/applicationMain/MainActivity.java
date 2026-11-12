@@ -1,7 +1,8 @@
 package com.cankurttekin.andmenu.applicationMain;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,7 +15,9 @@ import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.cankurttekin.andmenu.R;
@@ -270,18 +273,76 @@ public class MainActivity extends BaseWindowActivity {
         this.onCommandInput(mainInputText.getText());
     }
 
+    private Boolean currentUpwardsState = null;
+
+    private void updateUpwardsLayoutStructure() {
+        boolean isUpwards = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_appearance_upwards", false);
+
+        LinearLayout mainRoot = findViewById(R.id.mainRootLinearLayout);
+        View inputWrapper = findViewById(R.id.mainInputTextWrapperLinearLayout);
+        View candidateWrapper = findViewById(R.id.candidateViewWrapperLinearLayout);
+
+        if (mainRoot != null && inputWrapper != null && candidateWrapper != null) {
+            if (currentUpwardsState == null || currentUpwardsState != isUpwards) {
+                currentUpwardsState = isUpwards;
+                mainRoot.removeView(inputWrapper);
+                mainRoot.removeView(candidateWrapper);
+                if (isUpwards) {
+                    mainRoot.addView(candidateWrapper);
+                    mainRoot.addView(inputWrapper);
+                    candidateListView.setStackFromBottom(true);
+                } else {
+                    mainRoot.addView(inputWrapper);
+                    mainRoot.addView(candidateWrapper);
+                    candidateListView.setStackFromBottom(false);
+                }
+            }
+
+            LinearLayout.LayoutParams candidateParams = (LinearLayout.LayoutParams) candidateWrapper.getLayoutParams();
+            LinearLayout.LayoutParams inputParams = (LinearLayout.LayoutParams) inputWrapper.getLayoutParams();
+
+            if (isUpwards) {
+                candidateParams.height = 0;
+                candidateParams.weight = 1.0f;
+                inputParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                inputParams.weight = 0f;
+            } else {
+                candidateParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                candidateParams.weight = 0f;
+                inputParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                inputParams.weight = 0f;
+            }
+
+            candidateWrapper.setLayoutParams(candidateParams);
+            inputWrapper.setLayoutParams(inputParams);
+        }
+    }
+
     private void setWholeLayout() {
+        updateUpwardsLayoutStructure();
+
+        boolean isUpwards = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_appearance_upwards", false);
+
         if (resultCandidateListAdapter.isEmpty()) {
             findViewById(R.id.candidateViewWrapperLinearLayout).setPaddingRelative(0, 0, 0, 0);
         } else {
-            findViewById(R.id.candidateViewWrapperLinearLayout).setPaddingRelative(0, (int)(6 * getResources().getDisplayMetrics().density + 0.5), 0, 0);
+            int paddingPx = (int)(6 * getResources().getDisplayMetrics().density + 0.5);
+            if (isUpwards) {
+                findViewById(R.id.candidateViewWrapperLinearLayout).setPaddingRelative(0, 0, 0, paddingPx);
+            } else {
+                findViewById(R.id.candidateViewWrapperLinearLayout).setPaddingRelative(0, paddingPx, 0, 0);
+            }
         }
 
         final boolean contentFilled = !mainInputText.getText().toString().isEmpty() || this.homeItemExists;
 
         this.setWindowBoundarySize(contentFilled ? ROOT_WINDOW_FULL_WIDTH_IN_MOBILE : ROOT_WINDOW_ALWAYS_HORIZONTAL_MARGIN, 0);
 
-        this.setWindowLocationGravity(contentFilled ? Gravity.TOP : Gravity.CENTER_VERTICAL);
+        if (isUpwards) {
+            this.setWindowLocationGravity(Gravity.BOTTOM);
+        } else {
+            this.setWindowLocationGravity(contentFilled ? Gravity.TOP : Gravity.CENTER_VERTICAL);
+        }
 
         final double pixelsPerSp = getResources().getDisplayMetrics().scaledDensity;
 
@@ -315,12 +376,21 @@ public class MainActivity extends BaseWindowActivity {
             candidates.addAll(commandSearchAggregator.searchCandidateEntriesForLast(query, this));
         }
 
+        boolean isUpwards = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_appearance_upwards", false);
+        if (isUpwards) {
+            Collections.reverse(candidates);
+        }
+
         resultCandidateListAdapter.clear();
         resultCandidateListAdapter.addAll(candidates);
         resultCandidateListAdapter.notifyDataSetChanged();
 
         if (! candidates.isEmpty()) {
-            candidateListView.setSelection(0);
+            if (isUpwards) {
+                candidateListView.setSelection(resultCandidateListAdapter.getCount() - 1);
+            } else {
+                candidateListView.setSelection(0);
+            }
         }
 
         this.setWholeLayout();

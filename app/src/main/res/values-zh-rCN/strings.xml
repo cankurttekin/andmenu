@@ -106,6 +106,7 @@
     <string name="preferences_item_appearance_accent_color">强调色</string>
     <string name="preferences_item_appearance_animation_title">动画</string>
     <string name="preferences_item_appearance_show_icons_title">显示图标</string>
+    <string name="preferences_item_appearance_upwards_summary">Place the input bar at the bottom and list search results upwards</string>
     <string name="preferences_item_apps_show_package_name_title">显示包名</string>
     <string name="preferences_item_apps_show_package_name_summary">注意:即使关闭了这个选项，你也可以通过包名的一部分找到应用程序。</string>
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
@@ -304,4 +305,5 @@
     <string name="license_apache_license_v2.0_name">"        andmenu is licensed under the Apache License, Version 2.0."</string>
     <string name="preferences_category_rss">RSS Feeds</string>
     <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
+    <string name="preferences_item_appearance_upwards_title">Bottom search bar (upwards results)</string>
 </resources>

@@ -126,6 +126,8 @@
     <string name="preferences_item_appearance_accent_color">Vurgu rengi</string>
     <string name="preferences_item_appearance_animation_title">Animasyon</string>
     <string name="preferences_item_appearance_show_icons_title">Simgeleri göster</string>
+    <string name="preferences_item_appearance_upwards_title">Altta arama çubuğu (yukarı doğru sonuçlar)</string>
+    <string name="preferences_item_appearance_upwards_summary">Girdi çubuğunu en alta yerleştirir ve arama sonuçlarını yukarıya doğru sıralar</string>
     <string name="preferences_item_apps_show_package_name_title">Paket adını göster</string>
     <string name="preferences_item_apps_show_package_name_summary">Not: Bu kapalı olsa bile uygulamaları paket adının bir kısmını yazarak bulabilirsiniz.</string>
     <string name="preferences_item_apps_sort_by_usage_title">Kullanım sıklığına göre sırala</string>

@@ -106,6 +106,7 @@
     <string name="preferences_item_appearance_accent_color">重點色彩</string>
     <string name="preferences_item_appearance_animation_title">動畫</string>
     <string name="preferences_item_appearance_show_icons_title">Show icons</string>
+    <string name="preferences_item_appearance_upwards_summary">Place the input bar at the bottom and list search results upwards</string>
     <string name="preferences_item_apps_show_package_name_title">顯示套件（package）名稱</string>
     <string name="preferences_item_apps_show_package_name_summary">注意：即使此未核取此選項，您依然可以由名稱的一部分找到應用程式。</string>
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
@@ -301,4 +302,5 @@
     <string name="license_apache_license_v2.0_name">Apache License, Version 2.0</string>
     <string name="preferences_category_rss">RSS Feeds</string>
     <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
+    <string name="preferences_item_appearance_upwards_title">Bottom search bar (upwards results)</string>
 </resources>

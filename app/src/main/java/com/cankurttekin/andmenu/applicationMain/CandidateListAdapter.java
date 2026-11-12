@@ -146,10 +146,21 @@ class CandidateListAdapter extends ArrayAdapter<CandidateEntry> {
             return chosenNowExplicitly;
         }
 
-        for (int i = 0; i < this.getCount(); ++i) {
-            if (this.getItem(i).hasEvent()) {
-                this.chosenNowExplicitly = i;
-                return i;
+        boolean isUpwards = PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("pref_appearance_upwards", false);
+
+        if (isUpwards) {
+            for (int i = this.getCount() - 1; i >= 0; --i) {
+                if (this.getItem(i).hasEvent()) {
+                    this.chosenNowExplicitly = i;
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < this.getCount(); ++i) {
+                if (this.getItem(i).hasEvent()) {
+                    this.chosenNowExplicitly = i;
+                    return i;
+                }
             }
         }
         this.chosenNowExplicitly = CHOICE_UNAVAILABLE;

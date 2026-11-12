@@ -99,6 +99,13 @@
             android:title="@string/preferences_item_appearance_show_icons_title"
             app:iconSpaceReserved="false"
             />
+        <SwitchPreference
+            android:key="pref_appearance_upwards"
+            android:defaultValue="false"
+            android:title="@string/preferences_item_appearance_upwards_title"
+            android:summary="@string/preferences_item_appearance_upwards_summary"
+            app:iconSpaceReserved="false"
+            />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/preferences_category_apps"
