@@ -134,6 +134,8 @@
     <string name="preferences_item_apps_sort_by_usage_summary">Sık kullanılan uygulamaları arama sonuçlarının en üstünde gösterir.</string>
     <string name="preferences_item_apps_enable_category_search_title">Uygulamaları kategoriye göre ara</string>
     <string name="preferences_item_apps_enable_category_search_summary">Android kategorilerini (ör. oyunlar, sosyal, verimlilik vb.) yazarak uygulamaları bulun.</string>
+    <string name="preferences_item_apps_auto_launch_single_result_title">Tek sonucu otomatik başlat</string>
+    <string name="preferences_item_apps_auto_launch_single_result_summary">Yalnızca tek bir eşleşen sonuç bulunduğunda ögeyi otomatik olarak başlatır (varsayılan web arama motoru hariçtir).</string>
     <string name="preferences_item_display_custom_urls_title">Web sayfaları ve aramalar</string>
     <string name="preferences_item_default_search_title">Varsayılan Arama Motoru</string>
     <string name="preferences_item_default_search_summary">Listenin en altında her zaman belirli bir arama motorunu göster</string>

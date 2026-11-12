@@ -132,6 +132,13 @@
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             />
+        <SwitchPreference
+            android:key="pref_apps_auto_launch_single_result"
+            android:title="@string/preferences_item_apps_auto_launch_single_result_title"
+            android:summary="@string/preferences_item_apps_auto_launch_single_result_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false"
+            />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/preferences_category_search_commands"

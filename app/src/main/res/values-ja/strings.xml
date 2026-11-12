@@ -132,6 +132,7 @@
     <string name="preferences_item_apps_sort_by_usage_title">使用頻度順にソート</string>
     <string name="preferences_item_apps_sort_by_usage_summary">よく使うアプリを検索結果の上位に表示します。</string>
     <string name="preferences_item_apps_enable_category_search_summary">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
+    <string name="preferences_item_apps_auto_launch_single_result_summary">Automatically launch result if only one matching item is found (excludes default web search engine).</string>
     <string name="preferences_item_display_custom_urls_title">URL と検索エンジンの呼び出し設定</string>
     <string name="preferences_item_default_search_title">デフォルト検索エンジン</string>
     <string name="preferences_item_default_search_summary">常に設定した検索エンジンでの検索を一覧に表示します</string>
@@ -307,4 +308,5 @@
     <string name="preferences_category_rss">RSS Feeds</string>
     <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
     <string name="preferences_item_appearance_upwards_title">Bottom search bar (upwards results)</string>
+    <string name="preferences_item_apps_auto_launch_single_result_title">Auto-launch single result</string>
 </resources>

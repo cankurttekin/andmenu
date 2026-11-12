@@ -360,21 +360,37 @@ public class MainActivity extends BaseWindowActivity {
     }
 
     public void executeSearch(String query) {
-        List<CandidateEntry> candidates = new ArrayList<>();
+        List<CandidateEntry> primaryCandidates = new ArrayList<>();
 
         if (! query.isEmpty()) {
-            candidates.addAll(commandSearchAggregator.searchCandidateEntries(query, MainActivity.this));
+            primaryCandidates.addAll(commandSearchAggregator.searchCandidateEntries(query, MainActivity.this));
         }
 
         if (this.iAmHomeActivity && query.isEmpty()) {
             List<CandidateEntry> homeScreenEntries = commandSearchAggregator.homeScreenDefaultCandidateEntries(this);
-            candidates.addAll(homeScreenEntries);
+            primaryCandidates.addAll(homeScreenEntries);
             this.homeItemExists = ! homeScreenEntries.isEmpty();
         }
 
+        List<CandidateEntry> lastCandidates = new ArrayList<>();
         if (! query.isEmpty()) {
-            candidates.addAll(commandSearchAggregator.searchCandidateEntriesForLast(query, this));
+            lastCandidates.addAll(commandSearchAggregator.searchCandidateEntriesForLast(query, this));
         }
+
+        boolean autoLaunch = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean("pref_apps_auto_launch_single_result", false);
+
+        if (autoLaunch && !query.isEmpty() && primaryCandidates.size() == 1 && primaryCandidates.get(0).hasEvent()) {
+            CandidateEntry singleMatch = primaryCandidates.get(0);
+            com.cankurttekin.andmenu.interfaces.EventLauncher launcher = singleMatch.getEventLauncher(this);
+            if (launcher != null) {
+                launcher.launch(this);
+                return;
+            }
+        }
+
+        List<CandidateEntry> candidates = new ArrayList<>(primaryCandidates);
+        candidates.addAll(lastCandidates);
 
         boolean isUpwards = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_appearance_upwards", false);
         if (isUpwards) {

@@ -112,6 +112,7 @@
     <string name="preferences_item_apps_sort_by_usage_title">Sort by usage frequency</string>
     <string name="preferences_item_apps_sort_by_usage_summary">Display frequently used apps at the top of the search results.</string>
     <string name="preferences_item_apps_enable_category_search_summary">Find apps by typing Android categories (e.g. games, social, productivity, etc.).</string>
+    <string name="preferences_item_apps_auto_launch_single_result_summary">Automatically launch result if only one matching item is found (excludes default web search engine).</string>
     <string name="preferences_item_display_custom_urls_title">URL와 검색 엔진 설정</string>
     <string name="preferences_item_default_search_title">디폴트 검색 엔진</string>
     <string name="preferences_item_default_search_summary">설정된 검색 엔진으로의 웹 검색을 결과로 표시합니다.</string>
@@ -304,4 +305,5 @@
     <string name="preferences_category_rss">RSS Feeds</string>
     <string name="preferences_item_rss_enable_search">Enable RSS feeds search</string>
     <string name="preferences_item_appearance_upwards_title">Bottom search bar (upwards results)</string>
+    <string name="preferences_item_apps_auto_launch_single_result_title">Auto-launch single result</string>
 </resources>
